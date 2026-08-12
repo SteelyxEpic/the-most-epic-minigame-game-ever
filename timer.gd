@@ -2,7 +2,7 @@ extends Node2D
 @onready var timer: RichTextLabel = $timer #literally just the richlabeltext
 
 var time : float
-
+var cont: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -19,7 +19,8 @@ func Timer(start_time: float): # making a new function for timer countdown!
 	
 	while time > 0.0: # run if timer hasnt reached 0
 		await wait(0.10)
-		time = time - 0.10
+		if cont:
+			time = time - 0.10
 	
 	#when timer reaches 0
 	return

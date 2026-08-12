@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -750.0
@@ -19,12 +20,15 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		if !anim.is_playing():
+			anim.play("walk")
 		velocity.x = direction * SPEED
 		if direction > 0:
 			sprite.flip_h = false 
 		else:
 			sprite.flip_h = true
 	else:
+		anim.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 

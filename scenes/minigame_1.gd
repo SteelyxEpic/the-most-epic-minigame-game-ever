@@ -15,13 +15,16 @@ func _ready() -> void:
 		# tell the script to wait for a signal, or for when a function finshes
 
 
-	await themed_timer.Timer(10.0) #accessing a function from this node
+	await themed_timer.Timer(10.0 / Global.speed) #accessing a function from this node
 	#after this is compeleted...
 	timer_end = true # now we're saying "oh ye you ran out of time"
 
 func _process(delta: float) -> void: # running every frame brochacho
 	
 	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
+			themed_timer.cont = false
+			await wait(1/Global.speed)
+			Global.speed += 0.05
 			get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # go back to the intermission scene
 	
 	if timer_end: # if the timer does end...
@@ -32,7 +35,8 @@ func _process(delta: float) -> void: # running every frame brochacho
 		
 
 
-
+func wait(seconds: float) -> void: # write this simple function out for wait!
+	await get_tree().create_timer(seconds).timeout # makes u wait
 func _on_planets_collected() -> void:
 	print("collected!")
 	sound.play()

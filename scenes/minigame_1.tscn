@@ -54,6 +54,7 @@ script = ExtResource("1_j1cg4")
 [node name="Collected" type="AudioStreamPlayer2D" parent="." unique_id=629476930]
 position = Vector2(129, 94)
 stream = ExtResource("2_xpvfh")
+bus = &"SFX"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1139531206]
 offset_left = -183.0

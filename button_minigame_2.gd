@@ -14,9 +14,9 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	parent.spawn_button()
 	disabled = true
 	image.texture = broken
 	image.modulate.a = 0.5
 	parent.buttons_pressed += 1
+	parent.spawn_button()
 	print(parent.buttons_pressed)

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bjpexw3dfwola"]
+
+[ext_resource type="Script" uid="uid://dw0n17xr5s81q" path="res://cutscene.gd" id="1_h0cgr"]
+[ext_resource type="Texture2D" uid="uid://bqmr1rig22c7g" path="res://badlands.png" id="2_a5bqv"]
+[ext_resource type="PackedScene" uid="uid://bwrlrifg8usya" path="res://player.tscn" id="3_alj87"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="4_r44po"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s23sx"]
+size = Vector2(40, 40)
+
+[node name="lose" type="Node2D" unique_id=1344786992]
+script = ExtResource("1_h0cgr")
+
+[node name="Badlands" type="Sprite2D" parent="." unique_id=1458136035]
+position = Vector2(503, 312)
+scale = Vector2(1.2548827, 1.3164063)
+texture = ExtResource("2_a5bqv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1366301663]
+offset_left = 133.0
+offset_top = 11.0
+offset_right = 996.0
+offset_bottom = 204.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Oh noo! You crashed your ship! How are you going to survive in this desolate planet?!? Unless....."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1549343109]
+position = Vector2(-11114.001, 637)
+scale = Vector2(319.03857, 2.1599786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1999361381]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_s23sx")
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=558884500]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=613477140]
+position = Vector2(-247, 653)
+scale = Vector2(3.8540063, -29.50762)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=30330881]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_s23sx")
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=1042185536]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Platform4/ColorRect" unique_id=1714137828]
+layout_mode = 0
+offset_left = 353.139
+offset_top = -0.677791
+offset_right = 393.139
+offset_bottom = 39.32221
+
+[node name="Player" parent="." unique_id=528294459 instance=ExtResource("3_alj87")]
+position = Vector2(69, 479)
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_r44po")]
+position = Vector2(831, 433)

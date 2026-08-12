@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 	
 func zoomin(new_position: Vector2):
 	while zoom.x < 2.5:
-		zoom += Vector2(0.01, 0.01)
-		position = position.move_toward(new_position, 10)
+		zoom += Vector2(0.02, 0.02)
+		position = position.move_toward(new_position, 5)
 		await wait(0.02)
 func zoomout():
 	while zoom.x > 1:
-		zoom -= Vector2(0.01, 0.01)
-		position = position.move_toward(initial, 4)
+		zoom -= Vector2(0.015, 0.015)
+		position = position.move_toward(initial, 7)
 		await wait(0.02)
 func wait(seconds: float) -> void: # write this simple function out for wait!
 	await get_tree().create_timer(seconds).timeout 
