@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://djr2vmi0g31ja"]
+
+[ext_resource type="Script" uid="uid://byg3qjjam60h4" path="res://scenes/minigame_2.gd" id="1_dqa6p"]
+[ext_resource type="Texture2D" uid="uid://cwv7f6f3ydia4" path="res://epicbg2.png" id="1_xdwh2"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="4_c3ytc"]
+
+[node name="minigame_2" type="Node2D" unique_id=965648871]
+script = ExtResource("1_dqa6p")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=321937340]
+offset_left = -181.00002
+offset_top = -68.0
+offset_right = 843.0
+offset_bottom = 444.0
+scale = Vector2(1.4560801, 1.5785891)
+texture = ExtResource("1_xdwh2")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_c3ytc")]
+position = Vector2(865, -39)
+scale = Vector2(0.875, 0.98630136)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bmhflcrcuh5v3"]
+
+[ext_resource type="Script" uid="uid://gvcjmwrq76jr" path="res://timer.gd" id="1_87xcn"]
+
+[node name="Time" type="Node2D" unique_id=463451459]
+script = ExtResource("1_87xcn")
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=1966119297]
+offset_right = 124.70168
+offset_bottom = 109.42267
+scale = Vector2(2.550086, 2.047108)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 75
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1

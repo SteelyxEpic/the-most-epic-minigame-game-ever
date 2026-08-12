@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://cq8wk7sdcd1hc"]
+
+[ext_resource type="Script" uid="uid://db1r2mxqlomkq" path="res://scenes/minigame_1.gd" id="1_j1cg4"]
+[ext_resource type="Texture2D" uid="uid://cwv7f6f3ydia4" path="res://epicbg2.png" id="1_og05i"]
+[ext_resource type="Script" uid="uid://b5xp24hxt7v0a" path="res://scenes/planets.gd" id="2_fa05o"]
+[ext_resource type="PackedScene" uid="uid://bwrlrifg8usya" path="res://player.tscn" id="2_lmjug"]
+[ext_resource type="AudioStream" uid="uid://d1jyvtr8ejeqf" path="res://liecio-collect-points-190037.mp3" id="2_xpvfh"]
+[ext_resource type="Texture2D" uid="uid://cd344hgj4rthv" path="res://planet.png" id="3_lmjug"]
+[ext_resource type="Script" uid="uid://bn6bguq8jae54" path="res://scenes/animation_player.gd" id="4_v5ebm"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="7_vc5od"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(40, 40)
+
+[sub_resource type="Animation" id="Animation_v5ebm"]
+resource_name = "Floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-108, -49), Vector2(-108, -58.975), Vector2(-108, -49)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1cg4"]
+_data = {
+&"Floating": SubResource("Animation_v5ebm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+radius = 15.248279
+
+[node name="minigame_1" type="Node2D" unique_id=333539889]
+script = ExtResource("1_j1cg4")
+
+[node name="Collected" type="AudioStreamPlayer2D" parent="." unique_id=629476930]
+position = Vector2(129, 94)
+stream = ExtResource("2_xpvfh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1139531206]
+offset_left = -183.0
+offset_top = -69.0
+offset_right = 841.0
+offset_bottom = 443.0
+scale = Vector2(1.4560801, 1.5785891)
+texture = ExtResource("1_og05i")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=2000053749]
+position = Vector2(-12225.001, 177)
+scale = Vector2(319.03857, 2.1599786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1138955391]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1994912713]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1350504813]
+position = Vector2(617, 431)
+scale = Vector2(17.873543, 2.1336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1514953574]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1918837165]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=510123603]
+position = Vector2(-314.99997, 610.99994)
+scale = Vector2(45.254646, 3.6230154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=2104289856]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1925040450]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Planets" type="Node2D" parent="." unique_id=504646154]
+position = Vector2(452, 528)
+script = ExtResource("2_fa05o")
+
+[node name="Planet" type="TextureRect" parent="Planets" unique_id=1064700617]
+offset_left = -108.0
+offset_top = -49.0
+offset_right = 704.0
+offset_bottom = 359.00085
+scale = Vector2(0.25625923, 0.2475751)
+texture = ExtResource("3_lmjug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planets" unique_id=1782161039]
+root_node = NodePath("../Planet")
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+script = ExtResource("4_v5ebm")
+
+[node name="Area2D" type="Area2D" parent="Planets" unique_id=1289733235]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planets/Area2D" unique_id=1706539636]
+scale = Vector2(7.02884, 4.656505)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Planets2" type="Node2D" parent="." unique_id=2098346734]
+position = Vector2(1022, 344)
+script = ExtResource("2_fa05o")
+
+[node name="Planet" type="TextureRect" parent="Planets2" unique_id=1680029983]
+offset_left = -108.0
+offset_top = -49.0
+offset_right = 704.0
+offset_bottom = 359.00085
+scale = Vector2(0.25625923, 0.2475751)
+texture = ExtResource("3_lmjug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planets2" unique_id=1422378523]
+root_node = NodePath("../Planet")
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+script = ExtResource("4_v5ebm")
+
+[node name="Area2D" type="Area2D" parent="Planets2" unique_id=54193026]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planets2/Area2D" unique_id=1445314728]
+scale = Vector2(7.02884, 4.656505)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Planets3" type="Node2D" parent="." unique_id=1058417295]
+position = Vector2(129, 96)
+script = ExtResource("2_fa05o")
+
+[node name="Planet" type="TextureRect" parent="Planets3" unique_id=1759919733]
+offset_left = -108.0
+offset_top = -49.0
+offset_right = 704.0
+offset_bottom = 359.00085
+scale = Vector2(0.25625923, 0.2475751)
+texture = ExtResource("3_lmjug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planets3" unique_id=1784366344]
+root_node = NodePath("../Planet")
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+script = ExtResource("4_v5ebm")
+
+[node name="Area2D" type="Area2D" parent="Planets3" unique_id=764428904]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planets3/Area2D" unique_id=1311485024]
+scale = Vector2(7.02884, 4.656505)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Player" parent="." unique_id=528294459 instance=ExtResource("2_lmjug")]
+position = Vector2(94.000015, 544)
+scale = Vector2(0.46327418, 0.4667767)
+
+[node name="ThemedTimer" parent="." unique_id=463451459 instance=ExtResource("7_vc5od")]
+position = Vector2(1002, -6.9999847)
+scale = Vector2(0.46327418, 0.4667767)
+
+[connection signal="Planets_collected" from="Planets" to="." method="_on_planets_collected"]
+[connection signal="Planets_collected" from="Planets2" to="." method="_on_planets_collected"]
+[connection signal="Planets_collected" from="Planets3" to="." method="_on_planets_collected"]

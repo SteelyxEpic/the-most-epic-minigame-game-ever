@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dh7eon834krsq"]
+
+[ext_resource type="Script" uid="uid://df8k6xuqwgfs6" path="res://timer_screen.gd" id="1_3mivm"]
+[ext_resource type="Texture2D" uid="uid://3ugb51qpksmi" path="res://epicbg3.png" id="2_lwxgr"]
+[ext_resource type="Texture2D" uid="uid://1b7ob0fcukhq" path="res://heart.png" id="3_8wodn"]
+[ext_resource type="Script" uid="uid://dsun0wnk1t536" path="res://scenes/background.gd" id="3_c8xsp"]
+[ext_resource type="Script" uid="uid://cunywc02jbv77" path="res://scenes/camera_2d.gd" id="5_fkwfp"]
+[ext_resource type="AudioStream" uid="uid://brfa2efyxs0p5" path="res://crack.mp3" id="6_eohcs"]
+
+[sub_resource type="Animation" id="Animation_c8xsp"]
+resource_name = "suspense"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkwfp"]
+_data = {
+&"suspense": SubResource("Animation_c8xsp")
+}
+
+[node name="Level_scene" type="Node2D" unique_id=450659706]
+script = ExtResource("1_3mivm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1094629867]
+offset_left = -38.0
+offset_top = -24.0
+offset_right = 1200.0
+offset_bottom = 674.0
+texture = ExtResource("2_lwxgr")
+script = ExtResource("3_c8xsp")
+
+[node name="Lives" type="HBoxContainer" parent="." unique_id=2028287993]
+offset_left = 113.0
+offset_top = 118.0
+offset_right = 1053.0
+offset_bottom = 292.0
+theme_override_constants/separation = -200
+
+[node name="life1" type="TextureRect" parent="Lives" unique_id=1141983181]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 3
+
+[node name="life2" type="TextureRect" parent="Lives" unique_id=411987816]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 3
+
+[node name="life3" type="TextureRect" parent="Lives" unique_id=2073172557]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 3
+
+[node name="life4" type="TextureRect" parent="Lives" unique_id=1715657056]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 3
+
+[node name="life5" type="TextureRect" parent="Lives" unique_id=1979961623]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 3
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=2017762373]
+offset_left = 375.0
+offset_top = 295.0
+offset_right = 758.0
+offset_bottom = 456.0
+theme_override_font_sizes/normal_font_size = 80
+text = "Level 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1208779806]
+offset_left = 499.0
+offset_top = 546.0
+offset_right = 627.0
+offset_bottom = 615.0
+theme_override_font_sizes/normal_font_size = 50
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=835383405]
+libraries/ = SubResource("AnimationLibrary_fkwfp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1332858286]
+position = Vector2(575, 325)
+script = ExtResource("5_fkwfp")
+
+[node name="crack" type="AudioStreamPlayer2D" parent="." unique_id=955027449]
+stream = ExtResource("6_eohcs")
+volume_db = -0.54
+pitch_scale = 1.67
