@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bf6ic4qy4f73i"]
+
+[ext_resource type="Script" uid="uid://dbm2ld5j0px1m" path="res://asteriods.gd" id="1_4iq8k"]
+[ext_resource type="Texture2D" uid="uid://p3xolig020kk" path="res://asteroid.png" id="1_djvqc"]
+[ext_resource type="Texture2D" uid="uid://dvq4r2e1xm2ul" path="res://trail.png" id="2_4iq8k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+
+[sub_resource type="Animation" id="Animation_uapob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Asteroid:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.034906585]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Trail:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Trail:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.0235753, 1.2382814)]
+}
+
+[sub_resource type="Animation" id="Animation_paiv7"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Trail:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Trail:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.41, 0.65, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.0235753, 1.2382814), Vector2(1.066378, 1.3750608), Vector2(1.1268054, 1.2382814), Vector2(1.0848135, 1.263611), Vector2(1.0235753, 1.2382814)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f6js5"]
+_data = {
+&"RESET": SubResource("Animation_uapob"),
+&"spin": SubResource("Animation_paiv7")
+}
+
+[node name="asteriods" type="Node2D" unique_id=1984265872]
+scale = Vector2(0.333, 0.333)
+script = ExtResource("1_4iq8k")
+
+[node name="Asteroid" type="Sprite2D" parent="." unique_id=1437455795]
+position = Vector2(520, 173)
+texture = ExtResource("1_djvqc")
+
+[node name="Trail" type="Sprite2D" parent="Asteroid" unique_id=219032956]
+position = Vector2(-39, -43.999985)
+scale = Vector2(1.0235753, 1.2382814)
+texture = ExtResource("2_4iq8k")
+
+[node name="Area2D" type="Area2D" parent="Asteroid" unique_id=1519138854]
+position = Vector2(-520, -173)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid/Area2D" unique_id=757456375]
+position = Vector2(453, 129)
+scale = Vector2(30.566, 29.287)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=473261902]
+root_node = NodePath("../Asteroid")
+libraries/ = SubResource("AnimationLibrary_f6js5")

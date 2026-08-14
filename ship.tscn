@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://2557ooorteev"]
+
+[ext_resource type="Script" uid="uid://g06vmeqxeocy" path="res://ship.gd" id="1_4cq66"]
+[ext_resource type="Texture2D" uid="uid://bsqii3e33pkmn" path="res://plane.png" id="1_l3rv8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+
+[node name="Ship" type="CharacterBody2D" unique_id=247724331]
+scale = Vector2(0.2403324, 0.29669455)
+motion_mode = 1
+script = ExtResource("1_4cq66")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1935882825]
+position = Vector2(-337.03323, -20.222818)
+scale = Vector2(0.6956779, 1)
+amount = 50
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(13.89, 117.675)
+gravity = Vector2(-400, 0)
+color = Color(1, 0.627451, 0.039215688, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799216182]
+scale = Vector2(42.847004, 12.930999)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Plane" type="Sprite2D" parent="." unique_id=1715395117]
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("1_l3rv8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1796203705]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=867503240]
+scale = Vector2(42.847008, 12.930998)
+shape = SubResource("CircleShape2D_4kxuq")

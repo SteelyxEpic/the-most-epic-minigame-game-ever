@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ch3htbtjyy4ai" path="res://button.gd" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://qqcjqj8kwt1h" path="res://epicbg.png" id="2_s4lrb"]
 [ext_resource type="Script" uid="uid://dsun0wnk1t536" path="res://scenes/background.gd" id="3_s4lrb"]
+[ext_resource type="Texture2D" uid="uid://c85ckohxkivky" path="res://title.png" id="4_mgrm8"]
 
 [node name="TitleScreen" type="Node2D" unique_id=612877808]
 script = ExtResource("1_sa3yf")
@@ -21,26 +22,18 @@ pivot_offset = Vector2(655, 398)
 texture = ExtResource("2_s4lrb")
 script = ExtResource("3_s4lrb")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background" unique_id=91983411]
-clip_contents = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.49800003
-anchor_top = 0.5
-anchor_right = 0.49800003
-anchor_bottom = 0.5
-offset_left = -538.604
-offset_top = -329.5
-offset_right = 539.396
-offset_bottom = -49.5
-theme_override_colors/default_color = Color(0.9577959, 0.9817062, 0.956387, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85490197)
-theme_override_constants/outline_size = 30
-theme_override_font_sizes/normal_font_size = 100
-text = "The Most Epic Minigame Game ever"
-tab_size = 10
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Node2D" type="Node2D" parent="Background" unique_id=702141159]
+
+[node name="Title2" type="Sprite2D" parent="Background/Node2D" unique_id=1445075556]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(596, 140.00002)
+scale = Vector2(0.427, 0.467)
+texture = ExtResource("4_mgrm8")
+
+[node name="Title" type="Sprite2D" parent="Background/Node2D" unique_id=417207777]
+position = Vector2(596, 140.00002)
+scale = Vector2(0.40728784, 0.4477539)
+texture = ExtResource("4_mgrm8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1011763488]
 offset_left = 380.0

@@ -12,4 +12,6 @@ func _process(delta: float) -> void:
 	var offsetx = remap(get_viewport().get_mouse_position().x, 0, get_viewport_rect().size.x, -20, 0)
 	var offsety = remap(get_viewport().get_mouse_position().y, 0, get_viewport_rect().size.y, -20, 0)
 	position = Vector2(offsetx, offsety)
+	for child in get_children():
+		child.position = Vector2(offsetx, offsety)
 	
