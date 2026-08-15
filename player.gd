@@ -3,10 +3,11 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -750.0
 
-
+func _ready() -> void:
+	SPEED *= Global.speed
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

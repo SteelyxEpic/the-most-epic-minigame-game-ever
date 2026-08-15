@@ -4,6 +4,154 @@
 [ext_resource type="Texture2D" uid="uid://qqcjqj8kwt1h" path="res://epicbg.png" id="2_s4lrb"]
 [ext_resource type="Script" uid="uid://dsun0wnk1t536" path="res://scenes/background.gd" id="3_s4lrb"]
 [ext_resource type="Texture2D" uid="uid://c85ckohxkivky" path="res://title.png" id="4_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://csvefcad8ptoi" path="res://gear.png" id="5_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://c4jwda20i2hdq" path="res://happytraveller.png" id="5_e54dn"]
+
+[sub_resource type="Animation" id="Animation_mykxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [445.0]
+}
+
+[sub_resource type="Animation" id="Animation_tklts"]
+resource_name = "hover"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [445.0, 400.0, 445.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u26n3"]
+_data = {
+&"RESET": SubResource("Animation_mykxm"),
+&"hover": SubResource("Animation_tklts")
+}
+
+[sub_resource type="Animation" id="Animation_e54dn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1332, 447)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [447.0]
+}
+
+[sub_resource type="Animation" id="Animation_3yumr"]
+resource_name = "comein"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1332, 475), Vector2(950, 475)]
+}
+
+[sub_resource type="Animation" id="Animation_dc4i4"]
+resource_name = "comeout"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(950, 475), Vector2(1332, 475)]
+}
+
+[sub_resource type="Animation" id="Animation_cs5ya"]
+resource_name = "gearspin"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [447.0, 400.0, 447.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mykxm"]
+_data = {
+&"RESET": SubResource("Animation_e54dn"),
+&"comein": SubResource("Animation_3yumr"),
+&"comeout": SubResource("Animation_dc4i4"),
+&"gearspin": SubResource("Animation_cs5ya")
+}
 
 [node name="TitleScreen" type="Node2D" unique_id=612877808]
 script = ExtResource("1_sa3yf")
@@ -35,6 +183,21 @@ position = Vector2(596, 140.00002)
 scale = Vector2(0.40728784, 0.4477539)
 texture = ExtResource("4_mgrm8")
 
+[node name="Traveller" type="Sprite2D" parent="." unique_id=1905583530]
+position = Vector2(-198, 445)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_e54dn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Traveller" unique_id=1535437021]
+libraries/ = SubResource("AnimationLibrary_u26n3")
+
+[node name="Gear" type="Sprite2D" parent="." unique_id=2021045265]
+position = Vector2(1332, 447)
+texture = ExtResource("5_dc4i4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gear" unique_id=145485099]
+libraries/ = SubResource("AnimationLibrary_mykxm")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1011763488]
 offset_left = 380.0
 offset_top = 275.0
@@ -57,6 +220,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Quit ;-;"
 
+[connection signal="mouse_entered" from="VBoxContainer/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Button3" to="." method="_on_button_3_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Button2" to="." method="_on_button_2_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

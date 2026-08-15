@@ -34,7 +34,7 @@ func spawn_button() -> void:
 
 func _process(delta: float) -> void:
 	if buttons_pressed == numberbuttons:
-		Global.speed += 0.05
+		
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 	
 	if timer_end:

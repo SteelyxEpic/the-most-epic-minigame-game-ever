@@ -24,7 +24,7 @@ func _process(delta: float) -> void: # running every frame brochacho
 	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
 			themed_timer.cont = false
 			await wait(1/Global.speed)
-			Global.speed += 0.05
+			
 			get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # go back to the intermission scene
 	
 	if timer_end: # if the timer does end...

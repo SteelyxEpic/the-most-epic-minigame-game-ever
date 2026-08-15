@@ -10,7 +10,7 @@ func _ready() -> void:
 	await time.Timer(5.0 * Global.speed)
 	#after this is completed...
 	timer_end = true 
-	Global.speed += 0.05
+	
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 func summon():

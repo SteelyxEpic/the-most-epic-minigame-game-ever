@@ -9,6 +9,7 @@ extends Node2D
 @onready var timer: RichTextLabel = $Timer
 @onready var camera:Camera2D = $Camera2D
 @onready var crack:AudioStreamPlayer2D = $crack
+@onready var particles:CPUParticles2D = $CPUParticles2D
 @onready var broken:Texture2D = load("res://broken.png") as Texture2D
 
 
@@ -64,9 +65,10 @@ func _ready() -> void:
 	
 	if Global.lives > 0:
 		if Global.minigames_done < Global.minigames_doing or Global.gamemode == "infinity": # if you havent completed 3 minigames yet 
+			Global.speed += 0.05
 			await Timer(5.0 / Global.speed) # using the function created
 			Global.minigames_done = Global.minigames_done +1
-			get_tree().change_scene_to_file("res://scenes/minigame_" + str(rng.randi_range(1, 3)) + ".tscn") # changes your scene by arranging this frankenstein path. 
+			get_tree().change_scene_to_file("res://scenes/minigame_" + str(rng.randi_range(1, 4)) + ".tscn") # changes your scene by arranging this frankenstein path. 
 	# Above, your script is being told to go to the next minigame. If the 
 	# current minigame is Level 1, then you would be on minigame 1. If you 
 	# complete that level, you have the minigames_done add one, and then you 
@@ -79,10 +81,13 @@ func _ready() -> void:
 
 func shake(lives: TextureRect):
 	var center =lives.get_global_rect().get_center()
+	particles.position = center
 	await camera.zoomin(center)
-	await wait(1)
+	await wait(1) 
+	await camera.shake(0.5)
 	if !crack.playing && Global.lost:
 		crack.play()
+		particles.emitting = true
 	lives.texture = broken
 	Global.lost = false
 	await wait(0.5)

@@ -58,6 +58,21 @@ layout_mode = 2
 texture = ExtResource("3_8wodn")
 expand_mode = 3
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=281671608]
+position = Vector2(274, 209)
+rotation = -1.5814964
+emitting = false
+amount = 50
+lifetime = 0.75
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 32.68
+initial_velocity_min = 247.52
+initial_velocity_max = 247.52
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(0.5602599, 0.18797854, 0.08967657, 1)
+
 [node name="Level" type="RichTextLabel" parent="." unique_id=2017762373]
 offset_left = 375.0
 offset_top = 295.0

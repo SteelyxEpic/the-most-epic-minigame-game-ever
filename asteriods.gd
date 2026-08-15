@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var anim:AnimationPlayer = $AnimationPlayer
+@onready var anim:AnimationPlayer = $AnimationPlayer 
+@onready var area:Area2D = $Asteroid/Area2D
 @export var speed: float = 400.0
 
 func _physics_process(delta: float) -> void:
@@ -9,6 +10,7 @@ func _physics_process(delta: float) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("spin")
+	
 # the onreadys below run immediately at the start of the game, preventing 
 # errors related to variable that haven't been defined yet in later scripts 
 

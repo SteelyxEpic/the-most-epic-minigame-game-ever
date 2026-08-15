@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bcbsdsism50wf"]
+
+[ext_resource type="Script" uid="uid://cpglhqqbid1ar" path="res://scenes/minigame_4.gd" id="1_ewl5d"]
+[ext_resource type="Texture2D" uid="uid://v84fw406tb1" path="res://back4.png" id="1_mxhla"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="2_ewl5d"]
+[ext_resource type="Texture2D" uid="uid://bxswbqbwpdta3" path="res://button4.png" id="3_jlkes"]
+[ext_resource type="Script" uid="uid://bbyjddu78amnt" path="res://scenes/button4.gd" id="4_88pdw"]
+[ext_resource type="Texture2D" uid="uid://cug4fkj4ngxb7" path="res://arrow.png" id="4_jlkes"]
+[ext_resource type="AudioStream" uid="uid://2a5xkdxslp1m" path="res://beep.mp3" id="7_88pdw"]
+
+[node name="minigame_4" type="Node2D" unique_id=1732225971]
+script = ExtResource("1_ewl5d")
+
+[node name="Back4" type="Sprite2D" parent="." unique_id=1170704487]
+position = Vector2(556.00006, 353)
+scale = Vector2(1.6624389, 1.7250342)
+texture = ExtResource("1_mxhla")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("2_ewl5d")]
+position = Vector2(932.00006, -23.000002)
+scale = Vector2(0.6907378, 0.69796234)
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=90294614]
+position = Vector2(675, 350)
+rotation = 3.1415927
+scale = Vector2(0.575, 0.575)
+texture = ExtResource("4_jlkes")
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=1562614663]
+offset_left = 194.0
+offset_top = 260.0
+offset_right = 678.055
+offset_bottom = 393.935
+scale = Vector2(1.6, 1.6)
+
+[node name="1" type="TextureButton" parent="Buttons" unique_id=850906991]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_jlkes")
+script = ExtResource("4_88pdw")
+
+[node name="2" type="TextureButton" parent="Buttons" unique_id=78740350]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_jlkes")
+script = ExtResource("4_88pdw")
+
+[node name="3" type="TextureButton" parent="Buttons" unique_id=803255511]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_jlkes")
+script = ExtResource("4_88pdw")
+
+[node name="4" type="TextureButton" parent="Buttons" unique_id=339896209]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_jlkes")
+script = ExtResource("4_88pdw")
+
+[node name="ping" type="AudioStreamPlayer2D" parent="." unique_id=1460932348]
+position = Vector2(-2, -8)
+stream = ExtResource("7_88pdw")
+volume_db = -13.648
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="Buttons/1" to="." method="hover"]
+[connection signal="mouse_exited" from="Buttons/1" to="." method="hoverleft"]
+[connection signal="mouse_entered" from="Buttons/2" to="." method="hover"]
+[connection signal="mouse_exited" from="Buttons/2" to="." method="hoverleft"]
+[connection signal="mouse_entered" from="Buttons/3" to="." method="hover"]
+[connection signal="mouse_exited" from="Buttons/3" to="." method="hoverleft"]
+[connection signal="mouse_entered" from="Buttons/4" to="." method="hover"]
+[connection signal="mouse_exited" from="Buttons/4" to="." method="hoverleft"]
