@@ -4,6 +4,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	while Transtition.transtitioning:
+		await get_tree().process_frame
 	await themed_timer.Timer(7.0)
 	get_tree().change_scene_to_file("res://scenes/title_screen.tscn") 
 

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://df4vulcuxm3u"]
+
+[ext_resource type="PackedScene" uid="uid://bxkgjc0x21n28" path="res://lever.tscn" id="1_hsfub"]
+[ext_resource type="Script" uid="uid://cc8lmib7284x2" path="res://scenes/minigame_5.gd" id="1_mye35"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="3_rtm12"]
+[ext_resource type="Texture2D" uid="uid://bgto6hf5og5p" path="res://paper.png" id="4_rtm12"]
+
+[node name="minigame_5" type="Node2D" unique_id=1982328582]
+script = ExtResource("1_mye35")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("3_rtm12")]
+position = Vector2(935, -26)
+scale = Vector2(0.665, 0.665)
+
+[node name="lever4" parent="." unique_id=903905221 instance=ExtResource("1_hsfub")]
+position = Vector2(838, 17.000002)
+scale = Vector2(0.735, 0.735)
+index = 3
+
+[node name="lever3" parent="." unique_id=1013249501 instance=ExtResource("1_hsfub")]
+position = Vector2(631, 15.000002)
+scale = Vector2(0.735, 0.735)
+index = 2
+
+[node name="lever2" parent="." unique_id=1888986431 instance=ExtResource("1_hsfub")]
+position = Vector2(424, 20.000002)
+scale = Vector2(0.735, 0.735)
+index = 1
+
+[node name="lever" parent="." unique_id=429032968 instance=ExtResource("1_hsfub")]
+position = Vector2(206, 23.999994)
+scale = Vector2(0.735, 0.735)
+
+[node name="Paper" type="Sprite2D" parent="." unique_id=9567436]
+position = Vector2(617, 528)
+scale = Vector2(0.8185356, 0.84077376)
+texture = ExtResource("4_rtm12")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Paper" unique_id=1813868472]
+modulate = Color(0, 0, 0, 1)
+offset_left = -142.93819
+offset_top = -126.07435
+offset_right = 107.20897
+offset_bottom = 178.4071
+rotation = -0.13264503
+theme_override_font_sizes/normal_font_size = 35
+text = "The code is:
+----"
+horizontal_alignment = 1
+vertical_alignment = 1

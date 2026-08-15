@@ -9,12 +9,8 @@ var garlic_collected = 0 # just keeping track of garlic collected
 var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
-
-		#Below you can see that I have a function that I named. I grab a 
-		#function from it that was created in it's script and use `await` to 
-		# tell the script to wait for a signal, or for when a function finshes
-
-
+	while Transtition.transtitioning:
+		await get_tree().process_frame
 	await themed_timer.Timer(10.0 / Global.speed) #accessing a function from this node
 	if !Transtition.transtitioning:
 		Global.lost = true

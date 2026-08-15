@@ -18,9 +18,10 @@ func _process(delta: float) -> void:
 
 
 func _on_button_3_pressed() -> void:
+	Global.speed = 1
 	Global.lives = 5
 	Global.minigames_done = 0
-	Transtition.trans("level_scene")
+	Transtition.trans("modeselect")
 
 
 func _on_button_pressed() -> void:

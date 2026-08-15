@@ -11,6 +11,9 @@ var numberbuttons = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	while Transtition.transtitioning:
+		await get_tree().process_frame
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	numberbuttons = rng.randi_range(5, 5 + Global.minigames_done/2)
@@ -23,11 +26,12 @@ func _ready() -> void:
 		Transtition.trans("level_scene")
 
 func spawn_button() -> void:
+	remain.text = str(numberbuttons - buttons_pressed) + " remaining"
 	if buttons_pressed == numberbuttons:
 		
 		Transtition.trans("level_scene")
 	else:
-		remain.text = str(numberbuttons - buttons_pressed) + " remaining"
+		
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		print("spawning")

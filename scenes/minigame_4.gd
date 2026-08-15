@@ -11,6 +11,9 @@ var index: int = 0
 var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
+	
+	while Transtition.transtitioning:
+		await get_tree().process_frame
 	Global.minigame4.connect(click)
 	await wait(1/Global.speed)
 	for i in range((Global.minigames_done)/2 + 3):

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bxkgjc0x21n28"]
+
+[ext_resource type="Script" uid="uid://dpblucvwg26c5" path="res://lever.gd" id="1_7uavd"]
+[ext_resource type="Texture2D" uid="uid://bn0vskwwdw7gp" path="res://leverbase.png" id="2_soi7j"]
+[ext_resource type="Texture2D" uid="uid://b8roil0mkl2b3" path="res://lever.png" id="3_1kj1s"]
+
+[node name="lever" type="Node2D" unique_id=429032968]
+script = ExtResource("1_7uavd")
+
+[node name="Leverbase" type="Sprite2D" parent="." unique_id=2117395344]
+position = Vector2(150, 318)
+texture = ExtResource("2_soi7j")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=839026613]
+offset_left = 15.0
+offset_top = 162.0
+offset_right = 303.0
+offset_bottom = 475.0
+pivot_offset = Vector2(129, 176)
+texture_normal = ExtResource("3_1kj1s")

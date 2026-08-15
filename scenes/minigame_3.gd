@@ -7,6 +7,9 @@ const Asteroids = preload("res://asteriods.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	while Transtition.transtitioning:
+		await get_tree().process_frame
 	summon()
 	await time.Timer(5.0 * Global.speed)
 	#after this is completed...
