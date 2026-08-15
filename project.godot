@@ -21,6 +21,7 @@ buses/default_bus_layout="uid://dpy0xjl15bgyy"
 
 [autoload]
 
+Transtition="*uid://nisbcf35qfwy"
 Global="*uid://byoulyi6dp4yg"
 
 [display]

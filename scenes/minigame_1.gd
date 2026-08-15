@@ -16,22 +16,12 @@ func _ready() -> void:
 
 
 	await themed_timer.Timer(10.0 / Global.speed) #accessing a function from this node
-	#after this is compeleted...
-	timer_end = true # now we're saying "oh ye you ran out of time"
-
-func _process(delta: float) -> void: # running every frame brochacho
-	
-	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
-			themed_timer.cont = false
-			await wait(1/Global.speed)
-			
-			get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # go back to the intermission scene
-	
-	if timer_end: # if the timer does end...
+	if !Transtition.transtitioning:
 		Global.lost = true
 		Global.minigames_done -= 1 #go back a minigame
 		Global.lives -= 1 # lose ur lives
-		get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # back to intermission
+		Transtition.trans("level_scene") # back to intermission
+
 		
 
 
@@ -41,4 +31,8 @@ func _on_planets_collected() -> void:
 	print("collected!")
 	sound.play()
 	garlic_collected = garlic_collected +1
+	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
+			themed_timer.cont = false
+			await wait(1/Global.speed)
+			Transtition.trans("level_scene") # go back to the intermission scene
 	return

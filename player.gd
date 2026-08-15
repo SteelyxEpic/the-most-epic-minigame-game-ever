@@ -6,7 +6,20 @@ extends CharacterBody2D
 var SPEED = 300.0
 const JUMP_VELOCITY = -750.0
 
+var state = "idle"
+
+func set_state(new_state):
+	if state == new_state:
+		return
+	state = new_state
+	match state:
+		"idle":
+			anim.play("idle")
+		"walk":
+			anim.play("walk")
+
 func _ready() -> void:
+	set_state("idle")
 	SPEED *= Global.speed
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,15 +34,14 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		if !anim.is_playing():
-			anim.play("walk")
+		set_state("walk")
 		velocity.x = direction * SPEED
 		if direction > 0:
 			sprite.flip_h = false 
 		else:
 			sprite.flip_h = true
 	else:
-		anim.stop()
+		set_state("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 

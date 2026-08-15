@@ -30,11 +30,7 @@ func _ready() -> void:
 	
 	await themed_timer.Timer(5.0 / Global.speed) #accessing a function from this node
 	#after this is compeleted...
-	timer_end = true # now we're saying "oh ye you ran out of time"
-
-func _process(delta: float) -> void:
-	
-	if timer_end: # if the timer does end...
+	if !Transtition.transtitioning:
 		Global.lost = true
 		Global.minigames_done -= 1 #go back a minigame
 		Global.lives -= 1 # lose ur lives
@@ -51,13 +47,15 @@ func click(num: int):
 	if order[index] == num:
 		index += 1
 		if index == len(order):
+			for i in buttons.get_children():
+				i.disabled = true
 			
-			get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
+			Transtition.trans("level_scene")
 	else:
 		Global.lost = true
 		Global.minigames_done -= 1 #go back a minigame
 		Global.lives -= 1 # lose ur lives
-		get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # back to intermission
+		Transtition.trans("level_scene")
 		
 
 func wait(seconds: float) -> void: # write this simple function out for wait!

@@ -10,5 +10,8 @@ Aliens are hunting the same thing as you! Better watch out for them, if not they
 Dodging Asteroids:
 Asteroids inbound! Use your incredible maneuvering skills and fly between the flaming hunk of solid rock without crashing!
 
+Button memory:
+Your ship needs recalibration! Remember the sequence and test your memory because if you don't your journey might just end there
+
 Controls:
 All minigames will use either your mouse, arrow keys or space bar

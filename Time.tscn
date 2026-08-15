@@ -14,3 +14,6 @@ theme_override_font_sizes/normal_font_size = 75
 text = "0.0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="timer" unique_id=109919454]
+wait_time = 0.1

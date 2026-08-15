@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://nisbcf35qfwy"]
+
+[ext_resource type="Script" uid="uid://ctskwh5yulti3" path="res://transtition.gd" id="1_hgon1"]
+[ext_resource type="Texture2D" uid="uid://chark0anc4par" path="res://transtition.png" id="2_8hy1t"]
+
+[node name="transtition" type="Node2D" unique_id=2053643469]
+script = ExtResource("1_hgon1")
+
+[node name="Transtition" type="Sprite2D" parent="." unique_id=2134177629]
+z_index = 100
+position = Vector2(2100, 328)
+scale = Vector2(2.1875, 2.0961537)
+texture = ExtResource("2_8hy1t")

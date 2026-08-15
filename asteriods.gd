@@ -18,9 +18,4 @@ func _ready() -> void:
 @onready var player: CharacterBody2D = $"../Ship" # grabs the parent node
 @onready var self_area = $Asteroid/Area2D
 @onready var player_area = $"../Ship/Area2D"
-
-func _process(delta: float) -> void: # this runs EVERY FRAME! 
-	
-	if player_area.overlaps_area(self_area): # checks if overlapping
-		parent.hit()
 		
