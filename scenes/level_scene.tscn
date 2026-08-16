@@ -18,7 +18,7 @@ _data = {
 [node name="Level_scene" type="Node2D" unique_id=450659706]
 script = ExtResource("1_3mivm")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1094629867]
+[node name="bg" type="TextureRect" parent="." unique_id=1094629867]
 offset_left = -38.0
 offset_top = -24.0
 offset_right = 1200.0

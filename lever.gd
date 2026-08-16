@@ -13,7 +13,7 @@ func press():
 		button.rotation = 0
 	else:
 		button.rotation += rotations
-	Global.emit_signal("minigame5", index, button.rotation/(rotations*2))
+	Global.emit_signal("minigame5", index, button.rotation/(rotations))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

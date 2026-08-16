@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bff855n0hxpwh"]
+
+[ext_resource type="PackedScene" uid="uid://b5rmptox1qket" path="res://mechanical_lever.tscn" id="1_w3m6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm1bc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62yky"]
+
+[node name="minigame_6" type="Node2D" unique_id=1493191601]
+
+[node name="mechanical_lever" parent="." unique_id=1423467627 instance=ExtResource("1_w3m6k")]
+position = Vector2(572, 226)
+scale = Vector2(2, 2)
+
+[node name="Button" type="Button" parent="." unique_id=1317314428]
+offset_left = 217.0
+offset_top = 270.0
+offset_right = 529.0
+offset_bottom = 388.0
+theme_override_font_sizes/font_size = 80
+text = "Launch!"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=490495337]
+offset_left = 158.0
+offset_top = 452.0
+offset_right = 437.0
+offset_bottom = 503.66666
+scale = Vector2(3, 3)
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_mm1bc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_62yky")
+value = 50.0
+editable = false
+scrollable = false

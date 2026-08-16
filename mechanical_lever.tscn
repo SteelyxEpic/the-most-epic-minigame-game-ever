@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b5rmptox1qket"]
+
+[ext_resource type="Script" uid="uid://bl516184chu03" path="res://mechanical_lever.gd" id="1_5uif7"]
+[ext_resource type="Texture2D" uid="uid://bp3q8kuqyvmqu" path="res://mechleverbase.png" id="1_bscwr"]
+[ext_resource type="Texture2D" uid="uid://b8roil0mkl2b3" path="res://lever.png" id="2_5uif7"]
+
+[node name="mechanical_lever" type="Node2D" unique_id=1423467627]
+script = ExtResource("1_5uif7")
+max = 50.0
+min = -120.0
+step = 10.0
+
+[node name="Mechleverbase" type="Sprite2D" parent="." unique_id=362576879]
+position = Vector2(143.79852, 47.961212)
+rotation = -0.019491661
+scale = Vector2(0.544145, 0.51008123)
+texture = ExtResource("1_bscwr")
+
+[node name="lever" type="TextureButton" parent="." unique_id=1862600105]
+offset_left = -25.000002
+offset_top = -131.0
+offset_right = 263.0
+offset_bottom = 182.0
+rotation = 0.87266463
+scale = Vector2(0.6200185, 0.6265452)
+pivot_offset = Vector2(135.30557, 170.65685)
+texture_normal = ExtResource("2_5uif7")
+
+[node name="Timer" type="Timer" parent="." unique_id=485011871]
+wait_time = 0.05

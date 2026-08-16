@@ -2,11 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://bxkgjc0x21n28" path="res://lever.tscn" id="1_hsfub"]
 [ext_resource type="Script" uid="uid://cc8lmib7284x2" path="res://scenes/minigame_5.gd" id="1_mye35"]
+[ext_resource type="Texture2D" uid="uid://bgh1bthqvcir8" path="res://coolbg2.png" id="2_0m6xo"]
 [ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="3_rtm12"]
 [ext_resource type="Texture2D" uid="uid://bgto6hf5og5p" path="res://paper.png" id="4_rtm12"]
 
 [node name="minigame_5" type="Node2D" unique_id=1982328582]
 script = ExtResource("1_mye35")
+
+[node name="Coolbg2" type="Sprite2D" parent="." unique_id=338215780]
+position = Vector2(568, 303.25003)
+scale = Vector2(1.7156808, 1.6454328)
+texture = ExtResource("2_0m6xo")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("3_rtm12")]
 position = Vector2(935, -26)

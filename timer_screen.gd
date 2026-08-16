@@ -11,11 +11,15 @@ extends Node2D
 @onready var crack:AudioStreamPlayer2D = $crack
 @onready var particles:CPUParticles2D = $CPUParticles2D
 @onready var broken:Texture2D = load("res://broken.png") as Texture2D
+@onready var cool:Texture2D = load("res://coolbg4.png") as Texture2D
+@onready var bg: TextureRect = $bg
 
 
 var time
 
 func _ready() -> void:
+	if Global.gamemode == "stranded":
+		bg.texture = cool
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	await get_tree().process_frame

@@ -23,7 +23,7 @@ func _ready() -> void:
 		Transtition.trans("level_scene")
 
 func change(index: int, state: int):
-	their[index] = str(state)
+	their[index] = str(state/2)
 	if their == answer:
 		Transtition.trans("level_scene")
 		
