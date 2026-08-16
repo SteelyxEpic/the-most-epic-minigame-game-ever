@@ -18,6 +18,7 @@ extends Node2D
 var time
 
 func _ready() -> void:
+	Global.save()
 	if Global.gamemode == "stranded":
 		bg.texture = cool
 	var rng = RandomNumberGenerator.new()
@@ -70,8 +71,10 @@ func _ready() -> void:
 	if Global.lives > 0:
 		if Global.minigames_done < Global.minigames_doing or Global.gamemode == "infinity": # if you havent completed 3 minigames yet 
 			Global.speed += 0.05
+			Global.save()
 			await Timer(5.0 / Global.speed) # using the function created
 			Global.minigames_done = Global.minigames_done + 1
+			Global.data["minigames_played"] += 1
 			if Global.gamemode == "stranded":
 				Transtition.trans("minigame_" + str(rng.randi_range(5, 5)))
 			else:

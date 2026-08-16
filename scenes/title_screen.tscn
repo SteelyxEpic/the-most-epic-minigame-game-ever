@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c85ckohxkivky" path="res://title.png" id="4_mgrm8"]
 [ext_resource type="Texture2D" uid="uid://csvefcad8ptoi" path="res://gear.png" id="5_dc4i4"]
 [ext_resource type="Texture2D" uid="uid://c4jwda20i2hdq" path="res://happytraveller.png" id="5_e54dn"]
+[ext_resource type="Texture2D" uid="uid://bs7reab3ggpvk" path="res://achieve.png" id="7_3yumr"]
 
 [sub_resource type="Animation" id="Animation_mykxm"]
 length = 0.001
@@ -153,6 +154,44 @@ _data = {
 &"gearspin": SubResource("Animation_cs5ya")
 }
 
+[sub_resource type="Animation" id="Animation_u26n3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.08726646]
+}
+
+[sub_resource type="Animation" id="Animation_ib7db"]
+resource_name = "thorpy"
+length = 0.46666667
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.08726646, 0.08726646]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_frs5l"]
+_data = {
+&"RESET": SubResource("Animation_u26n3"),
+&"thorpy": SubResource("Animation_ib7db")
+}
+
 [node name="TitleScreen" type="Node2D" unique_id=612877808]
 script = ExtResource("1_sa3yf")
 
@@ -219,6 +258,19 @@ text = "Settings"
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Quit ;-;"
+
+[node name="acheivements" type="TextureButton" parent="." unique_id=1245705427]
+offset_left = -29.999985
+offset_top = 403.00006
+offset_right = 236.00002
+offset_bottom = 762.00006
+rotation = -0.08726646
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(132.5135, 172.65381)
+texture_normal = ExtResource("7_3yumr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="acheivements" unique_id=161657905]
+libraries/ = SubResource("AnimationLibrary_frs5l")
 
 [connection signal="mouse_entered" from="VBoxContainer/Button3" to="." method="_on_button_3_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/Button3" to="." method="_on_button_3_mouse_exited"]

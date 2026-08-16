@@ -7,7 +7,7 @@ func _ready() -> void:
 	while Transtition.transtitioning:
 		await get_tree().process_frame
 	await themed_timer.Timer(7.0)
-	get_tree().change_scene_to_file("res://scenes/title_screen.tscn") 
+	Transtition.trans("title_screen")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

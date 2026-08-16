@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bff855n0hxpwh"]
 
+[ext_resource type="Script" uid="uid://bh0yhm5ma3uaw" path="res://minigame_6.gd" id="1_cei50"]
 [ext_resource type="PackedScene" uid="uid://b5rmptox1qket" path="res://mechanical_lever.tscn" id="1_w3m6k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm1bc"]
@@ -7,6 +8,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62yky"]
 
 [node name="minigame_6" type="Node2D" unique_id=1493191601]
+script = ExtResource("1_cei50")
 
 [node name="mechanical_lever" parent="." unique_id=1423467627 instance=ExtResource("1_w3m6k")]
 position = Vector2(572, 226)
@@ -21,11 +23,11 @@ theme_override_font_sizes/font_size = 80
 text = "Launch!"
 
 [node name="HSlider" type="HSlider" parent="." unique_id=490495337]
-offset_left = 158.0
-offset_top = 452.0
-offset_right = 437.0
-offset_bottom = 503.66666
-scale = Vector2(3, 3)
+offset_left = 130.0
+offset_top = 433.0
+offset_right = 352.25
+offset_bottom = 480.91666
+scale = Vector2(4, 4)
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_mm1bc")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_62yky")
 value = 50.0

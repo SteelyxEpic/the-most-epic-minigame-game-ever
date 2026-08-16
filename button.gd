@@ -4,12 +4,16 @@ extends Node2D
 @onready var gear:Sprite2D = $Gear
 @onready var traveller:Sprite2D = $Traveller
 @onready var travelleranim:AnimationPlayer = $Traveller/AnimationPlayer
+@onready var achieve:TextureButton = $acheivements
+@onready var achieveanim:AnimationPlayer = $acheivements/AnimationPlayer
 
 var current_tween: Tween
 var play_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	achieveanim.play("thorpy")
+	achieve.pressed.connect(func():
+		Transtition.trans("achievements"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

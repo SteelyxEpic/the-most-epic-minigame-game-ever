@@ -39,6 +39,7 @@ func shape_entered(area: Area2D) -> void:
 		hit()
 func hit():
 	if !timer_end && !Global.lost:
+		Global.data["asteriods_collided"] += 1
 		Global.lost = true
 		Global.lives -= 1
 		Global.minigames_done -=1

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dsw7o4fa8t44q"]
+
+[ext_resource type="Texture2D" uid="uid://bxswbqbwpdta3" path="res://button4.png" id="1_1thjv"]
+
+[node name="Achievement" type="Node2D" unique_id=1695346173]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2112424691]
+offset_right = 635.0
+offset_bottom = 237.0
+texture = ExtResource("1_1thjv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=1203323581]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 11.0
+offset_right = 556.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Test test"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect" unique_id=1734629618]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 133.0
+offset_right = 572.0
+offset_bottom = 206.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Test test"
+horizontal_alignment = 1

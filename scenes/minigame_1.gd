@@ -25,6 +25,8 @@ func wait(seconds: float) -> void: # write this simple function out for wait!
 	await get_tree().create_timer(seconds).timeout # makes u wait
 func _on_planets_collected() -> void:
 	print("collected!")
+	Global.data["planets_collected"] += 1
+	
 	sound.play()
 	garlic_collected = garlic_collected +1
 	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
