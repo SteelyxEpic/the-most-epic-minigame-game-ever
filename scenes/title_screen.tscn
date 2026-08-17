@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://csvefcad8ptoi" path="res://gear.png" id="5_dc4i4"]
 [ext_resource type="Texture2D" uid="uid://c4jwda20i2hdq" path="res://happytraveller.png" id="5_e54dn"]
 [ext_resource type="Texture2D" uid="uid://bs7reab3ggpvk" path="res://achieve.png" id="7_3yumr"]
+[ext_resource type="Texture2D" uid="uid://miemqrqgtn2v" path="res://th.png" id="8_cs5ya"]
 
 [sub_resource type="Animation" id="Animation_mykxm"]
 length = 0.001
@@ -268,6 +269,13 @@ rotation = -0.08726646
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(132.5135, 172.65381)
 texture_normal = ExtResource("7_3yumr")
+
+[node name="Th" type="Sprite2D" parent="acheivements" unique_id=1704540268]
+visible = false
+position = Vector2(309.41058, 8.83252)
+rotation = 0.7298354
+scale = Vector2(0.6455027, 0.88861084)
+texture = ExtResource("8_cs5ya")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="acheivements" unique_id=161657905]
 libraries/ = SubResource("AnimationLibrary_frs5l")

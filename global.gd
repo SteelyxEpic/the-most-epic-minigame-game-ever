@@ -12,6 +12,7 @@ var data: Dictionary
 
 signal minigame4(number)
 signal minigame5(index, state)
+signal minigame6(state)
 
 func _ready() -> void:
 	data = load_data()

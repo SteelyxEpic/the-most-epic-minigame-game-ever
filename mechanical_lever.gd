@@ -15,7 +15,6 @@ func _ready() -> void:
 		)
 	lever.button_down.connect(func():
 		held = true
-		timer.start()
 		)
 	timer.timeout.connect(press)
 
@@ -24,8 +23,8 @@ func press():
 	if held:
 		if lever.rotation_degrees < max:
 			lever.rotation_degrees += step
-	elif lever.rotation_degrees > min:
+	elif lever.rotation_degrees - step > min:
 		lever.rotation_degrees -= step
-	else:
-		timer.stop()
+	Global.emit_signal("minigame6", (lever.rotation_degrees - min))
+		
 		

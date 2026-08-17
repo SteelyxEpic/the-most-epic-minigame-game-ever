@@ -5,6 +5,7 @@ extends Node2D
 @onready var traveller:Sprite2D = $Traveller
 @onready var travelleranim:AnimationPlayer = $Traveller/AnimationPlayer
 @onready var achieve:TextureButton = $acheivements
+@onready var achievebling:Sprite2D = $acheivements/Th
 @onready var achieveanim:AnimationPlayer = $acheivements/AnimationPlayer
 
 var current_tween: Tween
@@ -14,6 +15,12 @@ func _ready() -> void:
 	achieveanim.play("thorpy")
 	achieve.pressed.connect(func():
 		Transtition.trans("achievements"))
+	achieve.mouse_entered.connect(func():
+		achieve.scale += Vector2(0.1, 0.1)
+		achievebling.show())
+	achieve.mouse_exited.connect(func():
+		achieve.scale -= Vector2(0.1, 0.1)
+		achievebling.hide())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

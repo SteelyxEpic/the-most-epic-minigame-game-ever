@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bff855n0hxpwh"]
+
+[ext_resource type="Script" uid="uid://bh0yhm5ma3uaw" path="res://minigame_6.gd" id="1_brg8y"]
+[ext_resource type="Texture2D" uid="uid://djpge1yercutu" path="res://coolbg5.png" id="2_0js1j"]
+[ext_resource type="PackedScene" uid="uid://b5rmptox1qket" path="res://mechanical_lever.tscn" id="2_fmbmj"]
+[ext_resource type="Texture2D" uid="uid://c3suuetwowacg" path="res://Screenshot 2026-08-16 212248.png" id="3_0js1j"]
+[ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="4_eouyj"]
+[ext_resource type="Texture2D" uid="uid://cx4u6wy1kqptm" path="res://line.png" id="4_fmbmj"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="5_v57x5"]
+
+[node name="minigame_6" type="Node2D" unique_id=1493191601]
+script = ExtResource("1_brg8y")
+max = 0.4
+step = 0.02
+
+[node name="Coolbg5" type="Sprite2D" parent="." unique_id=2109798928]
+position = Vector2(579.5, 345.75)
+scale = Vector2(1.0238096, 1.0244055)
+texture = ExtResource("2_0js1j")
+
+[node name="mechanical_lever" parent="." unique_id=1423467627 instance=ExtResource("2_fmbmj")]
+position = Vector2(221, 309)
+scale = Vector2(2, 2)
+
+[node name="Button" type="Button" parent="." unique_id=1317314428]
+offset_left = 764.0
+offset_top = 312.0
+offset_right = 1076.0
+offset_bottom = 430.0
+theme_override_font_sizes/font_size = 80
+text = "Launch!"
+
+[node name="slider" type="Sprite2D" parent="." unique_id=22674064]
+position = Vector2(556, 593.00006)
+scale = Vector2(6.4825006, 1.045)
+texture = ExtResource("3_0js1j")
+
+[node name="range" type="Node2D" parent="slider" unique_id=1636587664]
+position = Vector2(120, 0)
+
+[node name="Line" type="Sprite2D" parent="slider/range" unique_id=904523123]
+position = Vector2(-75.002, 0)
+scale = Vector2(0.057551388, 0.32932255)
+texture = ExtResource("4_fmbmj")
+
+[node name="Line2" type="Sprite2D" parent="slider/range" unique_id=1114784950]
+position = Vector2(-44.999996, 0)
+scale = Vector2(0.057551388, 0.32932255)
+texture = ExtResource("4_fmbmj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=228950001]
+offset_left = 70.00001
+offset_top = 572.0
+offset_right = 2509.0
+offset_bottom = 1084.0
+scale = Vector2(1e-05, 0.085)
+texture = ExtResource("4_eouyj")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_v57x5")]
+position = Vector2(919.00006, -21.000002)
+scale = Vector2(0.73, 0.73)
+
+[connection signal="pressed" from="Button" to="." method="check"]

@@ -76,7 +76,7 @@ func _ready() -> void:
 			Global.minigames_done = Global.minigames_done + 1
 			Global.data["minigames_played"] += 1
 			if Global.gamemode == "stranded":
-				Transtition.trans("minigame_" + str(rng.randi_range(5, 5)))
+				Transtition.trans("minigame_" + str(rng.randi_range(5, 6)))
 			else:
 				Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path. 
 	# Above, your script is being told to go to the next minigame. If the 
