@@ -69,28 +69,21 @@ func _ready() -> void:
 	level.text = "Level " + str(Global.minigames_done + 1) # this tells you want minigame you're on using concatenation (google the word yo)
 	
 	if Global.lives > 0:
-		if Global.minigames_done < Global.minigames_doing or Global.gamemode == "infinity": # if you havent completed 3 minigames yet 
-			Global.speed += 0.05
-			Global.save()
-			await Timer(5.0 / Global.speed) # using the function created
-			Global.minigames_done = Global.minigames_done + 1
-			Global.data["minigames_played"] += 1
-			if Global.gamemode == "stranded":
-				Transtition.trans("minigame_" + str(rng.randi_range(5, 6)))
-			else:
-				Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path. 
-	# Above, your script is being told to go to the next minigame. If the 
-	# current minigame is Level 1, then you would be on minigame 1. If you 
-	# complete that level, you have the minigames_done add one, and then you 
-	# look for the scene titled `minigame_` and then whatever minigame number 
-	# should be next. Make sure you name your minigame saves appropriately.
-
+		if Global.minigames_done > Global.minigames_doing:
+			get_tree().change_scene_to_file("res://scenes/win.tscn")
+		Global.speed += 0.05
+		Global.save()
+		await Timer(5.0 / Global.speed) # using the function created
+		Global.minigames_done = Global.minigames_done + 1
+		Global.data["minigames_played"] += 1
+		if Global.gamemode == "stranded":
+			Transtition.trans("minigame_" + str(rng.randi_range(5, 7)))
 		else:
-			get_tree().change_scene_to_file("res://scenes/win.tscn") # changes your scene
+			Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path.
 
 
 func shake(lives: TextureRect):
-	var center =lives.get_global_rect().get_center()
+	var center = lives.get_global_rect().get_center()
 	particles.position = center
 	await camera.zoomin(center)
 	await wait(1) 

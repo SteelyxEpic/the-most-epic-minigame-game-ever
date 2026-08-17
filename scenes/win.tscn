@@ -10,6 +10,7 @@ size = Vector2(40, 40)
 
 [node name="win" type="Node2D" unique_id=304401000]
 script = ExtResource("1_yxbqr")
+win = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=254468691]
 offset_left = 140.0

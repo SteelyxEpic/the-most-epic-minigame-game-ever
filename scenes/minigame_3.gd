@@ -4,6 +4,7 @@ extends Node2D
 var timer_end:bool = false
 const Asteroids = preload("res://asteriods.tscn")
 @onready var player_area: Area2D = $Ship/Area2D
+@export var minigameseven: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,8 +26,14 @@ func summon():
 		var asteriod_instance = Asteroids.instantiate()
 		asteriod_instance.speed = 500 * Global.speed
 		add_child(asteriod_instance)
+		if minigameseven:
+			asteriod_instance.rotation_degrees = -90
+			asteriod_instance.position = Vector2(rng.randf_range(0, get_viewport_rect().size.x/5) * 5, 0)
+			asteriod_instance.speed *= randf_range(1.5, 2.5)
+		else:
+			asteriod_instance.position = Vector2(get_viewport_rect().size.x, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
 		asteriod_instance.get_child(0).get_child(1).area_entered.connect(shape_entered)
-		asteriod_instance.position = Vector2(get_viewport_rect().size.x, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
+		
 		await wait(3/Global.speed)
 	
 	

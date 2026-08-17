@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cpugp6wbqt2g3"]
+
+[ext_resource type="Script" uid="uid://cgokbvryn3i7r" path="res://scenes/minigame_3.gd" id="1_f4oek"]
+[ext_resource type="Texture2D" uid="uid://do45hlulxu0rd" path="res://coolbg3.png" id="2_f4oek"]
+[ext_resource type="PackedScene" uid="uid://bwrlrifg8usya" path="res://player.tscn" id="2_vodl3"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="3_vuxkx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xm2c"]
+size = Vector2(40, 40)
+
+[node name="minigame_7" type="Node2D" unique_id=224584114]
+script = ExtResource("1_f4oek")
+minigameseven = true
+
+[node name="Coolbg3" type="Sprite2D" parent="." unique_id=1392617612]
+position = Vector2(577, 270)
+scale = Vector2(1.6149554, 1.8269231)
+texture = ExtResource("2_f4oek")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=46621925]
+position = Vector2(-314.99997, 610.99994)
+scale = Vector2(45.254646, 3.6230154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1147659616]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_7xm2c")
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=376985738]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ship" parent="." unique_id=528294459 instance=ExtResource("2_vodl3")]
+position = Vector2(531, 515)
+scale = Vector2(0.6, 0.6)
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("3_vuxkx")]
+position = Vector2(983, -9)
+scale = Vector2(0.5, 0.5)

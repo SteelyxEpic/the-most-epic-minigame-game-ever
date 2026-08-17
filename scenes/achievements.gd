@@ -20,6 +20,10 @@ func change(i = 1):
 		ACHEIVE[x].get_child(0).get_child(0).text = Global.data.keys()[x + index]
 		ACHEIVE[x].get_child(0).get_child(1).text = str(Global.data.values()[x + index])
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func next():
+	if index + 4 < len(Global.data):
+		change(((index - 1)/4) + 1)
+
+func returns():
+	if index - 1 != 0:
+		change(((index - 1)/4) - 1)

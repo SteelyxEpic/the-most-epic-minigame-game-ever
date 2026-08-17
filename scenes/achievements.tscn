@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdygoxts27kf" path="res://scenes/achievements.gd" id="1_2q86a"]
 [ext_resource type="PackedScene" uid="uid://dsw7o4fa8t44q" path="res://achievement.tscn" id="1_5e7lm"]
+[ext_resource type="Texture2D" uid="uid://cug4fkj4ngxb7" path="res://arrow.png" id="3_jqgop"]
 
 [node name="achievements" type="Node2D" unique_id=403351225]
 script = ExtResource("1_2q86a")
@@ -12,16 +13,16 @@ scale = Vector2(1.2, 1.2)
 zoom = Vector2(0.9, 0.9)
 
 [node name="Achievement" parent="." unique_id=1695346173 instance=ExtResource("1_5e7lm")]
-position = Vector2(-65, 47)
+position = Vector2(-22, 36)
 
 [node name="Achievement2" parent="." unique_id=249456221 instance=ExtResource("1_5e7lm")]
-position = Vector2(548, 49)
+position = Vector2(591, 38)
 
 [node name="Achievement3" parent="." unique_id=1505852702 instance=ExtResource("1_5e7lm")]
-position = Vector2(-58, 304)
+position = Vector2(-8, 337)
 
 [node name="Achievement4" parent="." unique_id=107377023 instance=ExtResource("1_5e7lm")]
-position = Vector2(558, 309)
+position = Vector2(608, 342)
 
 [node name="Back" type="Button" parent="." unique_id=720402558]
 offset_left = -40.0
@@ -30,3 +31,24 @@ offset_right = 60.0
 offset_bottom = 35.0
 theme_override_font_sizes/font_size = 40
 text = "Back"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2060123583]
+offset_left = -61.0
+offset_top = 393.0
+offset_right = 154.0
+offset_bottom = 537.0
+rotation = -1.5755912
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("3_jqgop")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1923320450]
+offset_left = 1226.0
+offset_top = 282.0
+offset_right = 1441.0
+offset_bottom = 426.0
+rotation = -4.709359
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("3_jqgop")
+
+[connection signal="pressed" from="TextureButton" to="." method="returns"]
+[connection signal="pressed" from="TextureButton2" to="." method="next"]

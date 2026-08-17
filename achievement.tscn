@@ -1,31 +1,37 @@
 [gd_scene format=3 uid="uid://dsw7o4fa8t44q"]
 
-[ext_resource type="Texture2D" uid="uid://bxswbqbwpdta3" path="res://button4.png" id="1_1thjv"]
+[ext_resource type="Texture2D" uid="uid://cckre737h6dkb" path="res://achiece.png" id="1_1thjv"]
 
 [node name="Achievement" type="Node2D" unique_id=1695346173]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2112424691]
-offset_right = 635.0
-offset_bottom = 237.0
+offset_left = -26.0
+offset_top = -46.0
+offset_right = 1108.0
+offset_bottom = 753.0
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_1thjv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=1203323581]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 11.0
-offset_right = 556.0
-offset_bottom = 117.0
+offset_left = 148.33333
+offset_top = 126.66666
+offset_right = 547.12665
+offset_bottom = 232.66666
+scale = Vector2(1.985, 1.985)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 40
 text = "Test test"
+horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect" unique_id=1734629618]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 133.0
-offset_right = 572.0
-offset_bottom = 206.0
+offset_left = 220.70311
+offset_top = 372.91663
+offset_right = 593.3936
+offset_bottom = 445.91663
+scale = Vector2(1.985, 1.985)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 25
 text = "Test test"
 horizontal_alignment = 1
