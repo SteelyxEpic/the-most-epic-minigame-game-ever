@@ -1,0 +1,48 @@
+extends Node2D
+
+@onready var radar: Sprite2D = $Radarin
+@onready var timer:Timer = $Timer
+@onready var text:RichTextLabel = $Location
+@onready var themed_timer:Node2D = $Time
+
+@export var minigameeight: bool
+@export var step: float
+var change
+var range: float
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	while Transtition.transtitioning:
+		await get_tree().process_frame
+	range = randf_range(0, 360)
+	timer.timeout.connect(move)
+	if !minigameeight:
+		timer.start()
+	await themed_timer.Timer(10.0 / Global.speed)
+	#after this is compeleted...
+	if !Transtition.transtitioning:
+		Global.lost = true
+		Global.minigames_done -= 1 #go back a minigame
+		Global.lives -= 1 # lose ur lives
+		Transtition.trans("level_scene")
+	
+
+
+func back():
+	change = -1
+	timer.start()
+func after():
+	change = 1
+	timer.start()
+func stop() -> void:
+	timer.stop()
+func move():
+	radar.rotation_degrees += (step + Global.minigames_done)* change
+	if int(radar.rotation_degrees) % 360 > range - 55/2 and int(radar.rotation_degrees) % 360 < range + 55/2:
+		text.text = "Earth"
+	else:
+		text.text = "NULL"
+func check():
+	if text.text == "Earth":
+		Transtition.trans("level_scene")
+		

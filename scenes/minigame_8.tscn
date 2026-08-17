@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bh8eklrlug4fn"]
+
+[ext_resource type="Script" uid="uid://c0k00trnewm1x" path="res://minigame_8.gd" id="1_0577j"]
+[ext_resource type="Texture2D" uid="uid://bvaqsqks7nej3" path="res://radarin.png" id="1_rgcv3"]
+[ext_resource type="Texture2D" uid="uid://bgh1bthqvcir8" path="res://coolbg2.png" id="2_1qg8j"]
+[ext_resource type="Texture2D" uid="uid://c5qkuwaa21p7j" path="res://radar.png" id="2_i6bex"]
+[ext_resource type="Texture2D" uid="uid://cug4fkj4ngxb7" path="res://arrow.png" id="3_i6bex"]
+[ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="3_tuwxn"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="5_7v0go"]
+
+[node name="minigame_8" type="Node2D" unique_id=1716055912]
+script = ExtResource("1_0577j")
+minigameeight = true
+step = 5.0
+
+[node name="Coolbg2" type="Sprite2D" parent="." unique_id=686326698]
+position = Vector2(577.5, 282.5)
+scale = Vector2(1.313616, 1.8197116)
+texture = ExtResource("2_1qg8j")
+
+[node name="Spacebg" type="Sprite2D" parent="." unique_id=2115269398]
+position = Vector2(579, 596.5)
+scale = Vector2(0.15334153, 0.20898438)
+texture = ExtResource("3_tuwxn")
+
+[node name="Radarin" type="Sprite2D" parent="." unique_id=1415757056]
+position = Vector2(586.3553, 273.38303)
+scale = Vector2(0.6481481, 0.69301194)
+texture = ExtResource("1_rgcv3")
+offset = Vector2(0, -22.809418)
+
+[node name="Radar" type="Sprite2D" parent="." unique_id=1286991942]
+position = Vector2(560.3552, 276.38303)
+scale = Vector2(0.76782227, 0.7694194)
+texture = ExtResource("2_i6bex")
+
+[node name="Timer" type="Timer" parent="." unique_id=1003984507]
+wait_time = 0.05
+
+[node name="Left" type="TextureButton" parent="." unique_id=2100491390]
+offset_left = 175.0
+offset_top = 347.0
+offset_right = 390.0
+offset_bottom = 491.0
+rotation = -1.5755912
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("3_i6bex")
+
+[node name="Right" type="TextureButton" parent="." unique_id=1228798922]
+offset_left = 981.0
+offset_top = 226.0
+offset_right = 1196.0
+offset_bottom = 370.0
+rotation = -4.709359
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("3_i6bex")
+
+[node name="Location" type="RichTextLabel" parent="." unique_id=520519916]
+offset_left = 323.0
+offset_top = 539.0
+offset_right = 841.0
+offset_bottom = 652.0
+theme_override_font_sizes/normal_font_size = 80
+text = "NULL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_7v0go")]
+position = Vector2(935, -16)
+scale = Vector2(0.675, 0.675)
+
+[node name="Button" type="Button" parent="." unique_id=1033550628]
+offset_left = 932.0
+offset_top = 546.0
+offset_right = 1073.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 50
+text = "CALL!"
+
+[connection signal="button_down" from="Left" to="." method="back"]
+[connection signal="button_up" from="Left" to="." method="stop"]
+[connection signal="button_down" from="Right" to="." method="after"]
+[connection signal="button_up" from="Right" to="." method="stop"]
+[connection signal="pressed" from="Button" to="." method="check"]

@@ -1,6 +1,6 @@
 A new warioware game appears!
 
-So far there's only 11 minigames(4 are for the prologue of the game whereas the 5th to 11th ones are for the stranded version):
+So far there's only 8 minigames(4 are for the prologue of the game whereas the 5th to 8th ones are for the stranded version):
 Catch the planets:
 On the loose! Planets have been seen, your goal is to catch the planets and gain whatever information you can take from them
 
@@ -24,15 +24,6 @@ Rotate your antenna to the Earth's direction and send help signals, maybe someon
 
 Meteor shower:
 Oh no! A meteor showers coming! Quick dodge them now!
-
-Lights out!:
-The lights are off, find the switch and back on the lights!!
-
-Generator generation:
-Get the emergency power ready, mash it as hard as you can until we have the power!
-
-Earth Found!:
-The satelite's moving on its own! Find where Earth is from the light and press the force stop button quickly!
 
 Controls:
 All minigames will use either your mouse, arrow keys or space bar

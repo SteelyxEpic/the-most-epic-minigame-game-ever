@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4hccm3rd5t2r" path="res://ore.png" id="2_tylv2"]
 [ext_resource type="PackedScene" uid="uid://bwrlrifg8usya" path="res://player.tscn" id="3_5vxan"]
 [ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="4_4826q"]
+[ext_resource type="Texture2D" uid="uid://c2sc1hv3iibwv" path="res://strandedwin.png" id="4_tylv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yblwc"]
 size = Vector2(40, 40)
@@ -35,8 +36,10 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_yblwc")
 
 [node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=1579731082]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 0.22881551
+offset_top = 8.796383
+offset_right = 40.228817
+offset_bottom = 48.79638
 
 [node name="Platform4" type="StaticBody2D" parent="." unique_id=1140448766]
 position = Vector2(-247, 653)
@@ -52,13 +55,19 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Platform4/ColorRect" unique_id=217023254]
 layout_mode = 0
-offset_left = 353.139
-offset_top = -0.677791
-offset_right = 393.139
-offset_bottom = 39.32221
+offset_left = 364.81516
+offset_top = -1.1183552
+offset_right = 404.81516
+offset_bottom = 38.881645
 
 [node name="Player" parent="." unique_id=528294459 instance=ExtResource("3_5vxan")]
 position = Vector2(69, 479)
+
+[node name="Stranded" type="Sprite2D" parent="." unique_id=291828650]
+visible = false
+position = Vector2(580, 289)
+scale = Vector2(1.0167547, 1)
+texture = ExtResource("4_tylv2")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_4826q")]
 position = Vector2(831, 433)

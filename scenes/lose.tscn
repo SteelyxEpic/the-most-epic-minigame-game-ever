@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dw0n17xr5s81q" path="res://cutscene.gd" id="1_h0cgr"]
 [ext_resource type="Texture2D" uid="uid://bqmr1rig22c7g" path="res://badlands.png" id="2_a5bqv"]
 [ext_resource type="PackedScene" uid="uid://bwrlrifg8usya" path="res://player.tscn" id="3_alj87"]
+[ext_resource type="Texture2D" uid="uid://b4xc3imdftje0" path="res://strandedlose.png" id="4_a5bqv"]
 [ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="4_r44po"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s23sx"]
@@ -59,6 +60,12 @@ offset_bottom = 39.32221
 
 [node name="Player" parent="." unique_id=528294459 instance=ExtResource("3_alj87")]
 position = Vector2(69, 479)
+
+[node name="Stranded" type="Sprite2D" parent="." unique_id=1194367331]
+visible = false
+position = Vector2(580, 289)
+scale = Vector2(1.0167547, 1)
+texture = ExtResource("4_a5bqv")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_r44po")]
 position = Vector2(831, 433)

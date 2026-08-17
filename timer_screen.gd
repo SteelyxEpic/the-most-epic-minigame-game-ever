@@ -18,6 +18,7 @@ extends Node2D
 var time
 
 func _ready() -> void:
+	
 	Global.save()
 	if Global.gamemode == "stranded":
 		bg.texture = cool
@@ -69,15 +70,16 @@ func _ready() -> void:
 	level.text = "Level " + str(Global.minigames_done + 1) # this tells you want minigame you're on using concatenation (google the word yo)
 	
 	if Global.lives > 0:
+		Global.minigames_done = Global.minigames_done + 1
 		if Global.minigames_done > Global.minigames_doing:
 			get_tree().change_scene_to_file("res://scenes/win.tscn")
+			return
 		Global.speed += 0.05
 		Global.save()
 		await Timer(5.0 / Global.speed) # using the function created
-		Global.minigames_done = Global.minigames_done + 1
 		Global.data["minigames_played"] += 1
 		if Global.gamemode == "stranded":
-			Transtition.trans("minigame_" + str(rng.randi_range(5, 7)))
+			Transtition.trans("minigame_" + str(rng.randi_range(5, 8)))
 		else:
 			Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path.
 
