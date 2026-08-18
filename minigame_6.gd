@@ -46,4 +46,5 @@ func change(amount):
 func check():
 	if VALUE > range and VALUE < range + 30 - Global.minigames_done:
 		if !Transtition.transtitioning:
+			Global.data["fuel_refueled"] += 1
 			Transtition.trans("level_scene")

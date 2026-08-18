@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cug4fkj4ngxb7" path="res://arrow.png" id="3_i6bex"]
 [ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="3_tuwxn"]
 [ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="5_7v0go"]
+[ext_resource type="AudioStream" uid="uid://qf17s3vy7ymw" path="res://beeps.mp3" id="8_tuwxn"]
 
 [node name="minigame_8" type="Node2D" unique_id=1716055912]
 script = ExtResource("1_0577j")
@@ -76,6 +77,13 @@ offset_right = 1073.0
 offset_bottom = 623.0
 theme_override_font_sizes/font_size = 50
 text = "CALL!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=549298346]
+position = Vector2(981, 226)
+rotation = 1.5738262
+scale = Vector2(0.55, 0.55)
+stream = ExtResource("8_tuwxn")
+bus = &"SFX"
 
 [connection signal="button_down" from="Left" to="." method="back"]
 [connection signal="button_up" from="Left" to="." method="stop"]

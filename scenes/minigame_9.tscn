@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://1pk61jjirv8h"]
+
+[ext_resource type="Script" uid="uid://c0k00trnewm1x" path="res://minigame_8.gd" id="1_nhn45"]
+[ext_resource type="Texture2D" uid="uid://bgh1bthqvcir8" path="res://coolbg2.png" id="2_jeajx"]
+[ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="3_ocm2w"]
+[ext_resource type="Texture2D" uid="uid://bvaqsqks7nej3" path="res://radarin.png" id="4_bl0xy"]
+[ext_resource type="Texture2D" uid="uid://c5qkuwaa21p7j" path="res://radar.png" id="5_6u3p1"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="6_82ym5"]
+[ext_resource type="AudioStream" uid="uid://qf17s3vy7ymw" path="res://beeps.mp3" id="7_jeajx"]
+
+[node name="minigame_9" type="Node2D" unique_id=232390383]
+script = ExtResource("1_nhn45")
+step = 5.0
+
+[node name="Coolbg2" type="Sprite2D" parent="." unique_id=1163517800]
+position = Vector2(577.5, 282.5)
+scale = Vector2(1.313616, 1.8197116)
+texture = ExtResource("2_jeajx")
+
+[node name="Spacebg" type="Sprite2D" parent="." unique_id=1791549700]
+position = Vector2(579, 596.5)
+scale = Vector2(0.15334153, 0.20898438)
+texture = ExtResource("3_ocm2w")
+
+[node name="Radarin" type="Sprite2D" parent="." unique_id=727853018]
+position = Vector2(586.3553, 273.38303)
+scale = Vector2(0.6481481, 0.69301194)
+texture = ExtResource("4_bl0xy")
+offset = Vector2(0, -22.809418)
+
+[node name="Radar" type="Sprite2D" parent="." unique_id=141937271]
+position = Vector2(560.3552, 276.38303)
+scale = Vector2(0.76782227, 0.7694194)
+texture = ExtResource("5_6u3p1")
+
+[node name="Timer" type="Timer" parent="." unique_id=5469750]
+wait_time = 0.05
+
+[node name="Location" type="RichTextLabel" parent="." unique_id=723125809]
+offset_left = 323.0
+offset_top = 539.0
+offset_right = 841.0
+offset_bottom = 652.0
+theme_override_font_sizes/normal_font_size = 80
+text = "NULL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("6_82ym5")]
+position = Vector2(935, -16)
+scale = Vector2(0.675, 0.675)
+
+[node name="Button" type="Button" parent="." unique_id=1416160364]
+offset_left = 932.0
+offset_top = 546.0
+offset_right = 1073.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 50
+text = "CALL!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1995440163]
+position = Vector2(981, 226)
+rotation = 1.5738262
+scale = Vector2(0.55, 0.55)
+stream = ExtResource("7_jeajx")
+bus = &"SFX"
+
+[connection signal="pressed" from="Button" to="." method="check"]

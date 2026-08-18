@@ -16,9 +16,11 @@ func change(i = 1):
 	index = i * 4 + 1
 	for x in range(4):
 		if x + index>= len(Global.data):
-			break
-		ACHEIVE[x].get_child(0).get_child(0).text = Global.data.keys()[x + index]
-		ACHEIVE[x].get_child(0).get_child(1).text = str(Global.data.values()[x + index])
+			ACHEIVE[x].get_child(0).get_child(0).text = ""
+			ACHEIVE[x].get_child(0).get_child(1).text = ""
+		else:
+			ACHEIVE[x].get_child(0).get_child(0).text = Global.data.keys()[x + index]
+			ACHEIVE[x].get_child(0).get_child(1).text = str(Global.data.values()[x + index])
 
 func next():
 	if index + 4 < len(Global.data):

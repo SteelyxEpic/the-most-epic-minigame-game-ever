@@ -79,7 +79,7 @@ func _ready() -> void:
 		await Timer(5.0 / Global.speed) # using the function created
 		Global.data["minigames_played"] += 1
 		if Global.gamemode == "stranded":
-			Transtition.trans("minigame_" + str(rng.randi_range(5, 8)))
+			Transtition.trans("minigame_" + str(rng.randi_range(5, 9)))
 		else:
 			Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path.
 
