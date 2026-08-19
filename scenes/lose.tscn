@@ -63,8 +63,8 @@ position = Vector2(69, 479)
 
 [node name="Stranded" type="Sprite2D" parent="." unique_id=1194367331]
 visible = false
-position = Vector2(580, 289)
-scale = Vector2(1.0167547, 1)
+position = Vector2(580, 344)
+scale = Vector2(1.0167547, 0.8585732)
 texture = ExtResource("4_a5bqv")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_r44po")]

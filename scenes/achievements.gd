@@ -3,7 +3,11 @@ extends Node2D
 const acheivement = preload("res://achievement.tscn")
 @onready var ACHEIVE = [$Achievement, $Achievement2, $Achievement3, $Achievement4]
 @onready var back: Button = $Back
+@onready var re: TextureButton = $TextureButton
+@onready var fo: TextureButton = $TextureButton2
+
 var index = 0
+var previous = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	back.pressed.connect(func():
@@ -13,19 +17,22 @@ func _ready() -> void:
 		
 
 func change(i = 1):
-	index = i * 4 + 1
+	index = i * 4
 	for x in range(4):
-		if x + index>= len(Global.data):
-			ACHEIVE[x].get_child(0).get_child(0).text = ""
-			ACHEIVE[x].get_child(0).get_child(1).text = ""
-		else:
-			ACHEIVE[x].get_child(0).get_child(0).text = Global.data.keys()[x + index]
-			ACHEIVE[x].get_child(0).get_child(1).text = str(Global.data.values()[x + index])
-
+		ACHEIVE[x].get_child(0).get_child(0).text = ""
+		ACHEIVE[x].get_child(0).get_child(1).text = ""
+		if(x + index >= len(Global.data["achieve"])):
+			continue
+		ACHEIVE[x].get_child(0).get_child(0).text = Global.data["achieve"].keys()[x + index]
+		ACHEIVE[x].get_child(0).get_child(1).text = str(Global.data["achieve"].values()[x + index])
 func next():
-	if index + 4 < len(Global.data):
-		change(((index - 1)/4) + 1)
+	change(index/4 + 1)
+	re.show()
+	if index + 4 >= len(Global.data["achieve"]):
+		fo.hide()
 
 func returns():
-	if index - 1 != 0:
-		change(((index - 1)/4) - 1)
+	change(index/4 - 1)
+	fo.show()
+	if index == 0:
+		re.hide()

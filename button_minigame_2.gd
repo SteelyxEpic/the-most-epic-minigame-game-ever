@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	Global.data["aliens_tapped"] += 1
+	Global.data["achieve"]["aliens_tapped"] += 1
 	
 	disabled = true
 	image.texture = broken

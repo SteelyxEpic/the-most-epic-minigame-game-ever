@@ -7,12 +7,15 @@ extends Node2D
 @onready var achieve:TextureButton = $acheivements
 @onready var achievebling:Sprite2D = $acheivements/Th
 @onready var achieveanim:AnimationPlayer = $acheivements/AnimationPlayer
+@onready var buttoncontainer: VBoxContainer = $VBoxContainer
 
 var current_tween: Tween
 var play_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	achieveanim.play("thorpy")
+	if Global.data["achieve"]["minigames_played"] >= 20 and Global.data["Gamemodes"].find(4) == -1:
+		Global.data["Gamemodes"].append(4)
 	achieve.pressed.connect(func():
 		Transtition.trans("achievements"))
 	achieve.mouse_entered.connect(func():
@@ -32,6 +35,8 @@ func _on_button_3_pressed() -> void:
 	Global.speed = 1
 	Global.lives = 5
 	Global.minigames_done = 0
+	for i in buttoncontainer.get_children():
+		i.disabled = true
 	Transtition.trans("modeselect")
 
 

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://buwry1x54u812"]
+
+[ext_resource type="Script" uid="uid://rkif4mgs38j4" path="res://scenes/minigame_10.gd" id="1_45wb0"]
+[ext_resource type="Texture2D" uid="uid://bxswbqbwpdta3" path="res://button4.png" id="1_i7jw7"]
+[ext_resource type="Texture2D" uid="uid://cgfu8ladq8y13" path="res://coolbg4.png" id="2_45wb0"]
+[ext_resource type="Shader" uid="uid://debk681d0dkin" path="res://scenes/light.gdshader" id="3_ypkwt"]
+[ext_resource type="Texture2D" uid="uid://ch5gvar6y0jpo" path="res://light.png" id="4_45wb0"]
+[ext_resource type="Script" uid="uid://bg2u0yj24klf3" path="res://scenes/flashlight.gd" id="5_v2i0o"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="6_ypkwt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4kxuq"]
+shader = ExtResource("3_ypkwt")
+
+[node name="minigame_10" type="Node2D" unique_id=1848284318]
+script = ExtResource("1_45wb0")
+
+[node name="Coolbg4" type="Sprite2D" parent="." unique_id=1848505804]
+position = Vector2(338, 433)
+scale = Vector2(1.8080357, 2.0673077)
+texture = ExtResource("2_45wb0")
+
+[node name="Light" type="Sprite2D" parent="." unique_id=746329521]
+visible = false
+z_index = 200
+material = SubResource("ShaderMaterial_4kxuq")
+position = Vector2(857, 395)
+texture = ExtResource("4_45wb0")
+script = ExtResource("5_v2i0o")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=259997937]
+z_index = 100
+position = Vector2(863, 329)
+copy_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BackBufferCopy" unique_id=815816763]
+modulate = Color(0.043137256, 0.043137256, 0.043137256, 1)
+offset_left = -1149.0
+offset_top = -496.0
+offset_right = 556.0
+offset_bottom = 543.0
+texture = ExtResource("1_i7jw7")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("6_ypkwt")]
+z_index = 1000
+position = Vector2(934, -25.000004)
+scale = Vector2(0.655, 0.655)
+
+[node name="remainder" type="RichTextLabel" parent="." unique_id=654202267]
+z_index = 2000
+offset_right = 421.0
+offset_bottom = 99.0
+theme_override_font_sizes/normal_font_size = 60
+text = "1/1 remaining
+"

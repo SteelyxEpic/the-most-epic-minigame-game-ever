@@ -7,7 +7,7 @@ var minigames_doing = 10
 var speed = 1.0
 var gamemode = "ori"
 var save_location = "user://save.json"
-var default: Dictionary = {"Gamemodes": [0], "minigames_played": 0, "aliens_tapped": 0, "planets_collected": 0, "asteriods_collided": 0, "fuel_refueled": 0, "levers_flicked": 0}
+var default: Dictionary = {"Gamemodes": [1],"Settings":{"SFX": 1, "Music": 1, "Rounds": 10}, "achieve":{ "minigames_played": 0, "aliens_tapped": 0, "planets_collected": 0, "asteriods_collided": 0, "fuel_refueled": 0, "levers_flicked": 0, "lights_turned_on": 0, "Earths_found": 0}}
 var data: Dictionary
 
 signal minigame4(number)
@@ -16,7 +16,11 @@ signal minigame6(state)
 
 func _ready() -> void:
 	data = load_data()
-
+	
+func override():
+	data = default
+	save()
+	
 func save():
 	var file: FileAccess = FileAccess.open(save_location, FileAccess.WRITE)
 	var str_data = JSON.stringify(data)

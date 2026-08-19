@@ -7,7 +7,7 @@
 script = ExtResource("1_hgon1")
 
 [node name="Transtition" type="Sprite2D" parent="." unique_id=2134177629]
-z_index = 100
+z_index = 4096
 position = Vector2(2100, 328)
 scale = Vector2(2.1875, 2.0961537)
 texture = ExtResource("2_8hy1t")

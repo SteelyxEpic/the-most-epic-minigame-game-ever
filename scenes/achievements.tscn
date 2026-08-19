@@ -33,6 +33,7 @@ theme_override_font_sizes/font_size = 40
 text = "Back"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2060123583]
+visible = false
 offset_left = -61.0
 offset_top = 393.0
 offset_right = 154.0

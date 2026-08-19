@@ -14,10 +14,10 @@ stream = ExtResource("2_6wm04")
 bus = &"SFX"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1495936543]
-offset_left = 203.0
-offset_top = 223.0
-offset_right = 446.0
-offset_bottom = 378.0
+offset_left = 209.0
+offset_top = 422.0
+offset_right = 452.0
+offset_bottom = 577.0
 theme_override_font_sizes/normal_font_size = 52
 text = "No of rounds"
 horizontal_alignment = 1
@@ -33,7 +33,7 @@ text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="." unique_id=387876335]
+[node name="SFX" type="HSlider" parent="." unique_id=387876335]
 offset_left = 426.0
 offset_top = 80.0
 offset_right = 511.0
@@ -41,13 +41,33 @@ offset_bottom = 118.0
 scale = Vector2(6.356934, 4.3168306)
 max_value = 1.0
 step = 0.02
-value = 1.0
+value = 0.5
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=546011877]
+offset_left = 240.0
+offset_top = 276.0
+offset_right = 399.0
+offset_bottom = 350.0
+theme_override_font_sizes/normal_font_size = 52
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="." unique_id=171195744]
+offset_left = 432.0
+offset_top = 228.0
+offset_right = 517.0
+offset_bottom = 266.0
+scale = Vector2(6.356934, 4.3168306)
+max_value = 1.0
+step = 0.02
+value = 0.5
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1580240318]
-offset_left = 586.0
-offset_top = 255.0
-offset_right = 777.0
-offset_bottom = 342.0
+offset_left = 592.0
+offset_top = 454.0
+offset_right = 788.0
+offset_bottom = 541.0
 theme_override_font_sizes/font_size = 50
 text = "10"
 alignment = 1
@@ -62,8 +82,10 @@ offset_bottom = 121.0
 theme_override_font_sizes/font_size = 60
 text = "Back"
 
-[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
-[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="drag_ended" from="SFX" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="SFX" to="." method="_on_h_slider_value_changed"]
+[connection signal="drag_ended" from="Music" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="Music" to="." method="_on_h_slider2_value_changed"]
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

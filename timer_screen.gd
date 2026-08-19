@@ -12,6 +12,8 @@ extends Node2D
 @onready var particles:CPUParticles2D = $CPUParticles2D
 @onready var broken:Texture2D = load("res://broken.png") as Texture2D
 @onready var cool:Texture2D = load("res://coolbg4.png") as Texture2D
+@onready var awesome:Texture2D = load("res://awesomebg2.png") as Texture2D
+@onready var inf: Texture2D = load("res://infbg.png") as Texture2D
 @onready var bg: TextureRect = $bg
 
 
@@ -22,6 +24,10 @@ func _ready() -> void:
 	Global.save()
 	if Global.gamemode == "stranded":
 		bg.texture = cool
+	elif Global.gamemode == "refined":
+		bg.texture = awesome
+	elif Global.gamemode == "infinity":
+		bg.texture = inf
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	await get_tree().process_frame
@@ -77,9 +83,13 @@ func _ready() -> void:
 		Global.speed += 0.05
 		Global.save()
 		await Timer(5.0 / Global.speed) # using the function created
-		Global.data["minigames_played"] += 1
+		Global.data["achieve"]["minigames_played"] += 1
 		if Global.gamemode == "stranded":
-			Transtition.trans("minigame_" + str(rng.randi_range(5, 9)))
+			Transtition.trans("minigame_" + str(rng.randi_range(5, 10)))
+		elif Global.gamemode == "refined":
+			Transtition.trans("minigame_" + str(rng.randi_range(5, 10)))
+		elif Global.gamemode == "infinity":
+			Transtition.trans("minigame_" + str(rng.randi_range(1, 10)))
 		else:
 			Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path.
 

@@ -42,7 +42,8 @@ func move():
 	radar.rotation_degrees += (step + Global.minigames_done)* change
 	if int(radar.rotation_degrees) % 360 > range - 55/2 and int(radar.rotation_degrees) % 360 < range + 55/2:
 		if minigameeight:
-			play()
+			if !text.text == "Earth":
+				play()
 		else:
 			play()
 			if !sound.finished.get_connections():
@@ -57,9 +58,10 @@ func play():
 	if(!sound.playing):
 		sound.play()
 func check():
-	if text.text == "Earth":
+	if text.text == "Earth" and !Transtition.transtitioning:
 		if sound.finished.get_connections():
 			sound.finished.disconnect(play)
 		timer.stop()
+		Global.data["achieve"]["Earths_found"] += 1
 		Transtition.trans("level_scene")
 		

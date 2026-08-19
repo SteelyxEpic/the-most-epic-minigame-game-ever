@@ -25,7 +25,7 @@ func wait(seconds: float) -> void: # write this simple function out for wait!
 	await get_tree().create_timer(seconds).timeout # makes u wait
 func _on_planets_collected() -> void:
 	print("collected!")
-	Global.data["planets_collected"] += 1
+	Global.data["achieve"]["planets_collected"] += 1
 	
 	sound.play()
 	garlic_collected = garlic_collected +1

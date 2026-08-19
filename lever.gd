@@ -9,7 +9,7 @@ func _ready() -> void:
 	button.pressed.connect(press)
 
 func press():
-	Global.data["levers_flicked"] += 1
+	Global.data["achieve"]["levers_flicked"] += 1
 	if button.rotation == rotations * 2:
 		button.rotation = 0
 	else:
