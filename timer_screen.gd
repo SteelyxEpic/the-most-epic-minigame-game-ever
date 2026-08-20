@@ -20,7 +20,6 @@ extends Node2D
 var time
 
 func _ready() -> void:
-	
 	Global.save()
 	if Global.gamemode == "stranded":
 		bg.texture = cool
@@ -77,7 +76,7 @@ func _ready() -> void:
 	
 	if Global.lives > 0:
 		Global.minigames_done = Global.minigames_done + 1
-		if Global.minigames_done > Global.minigames_doing:
+		if Global.minigames_done > Global.minigames_doing and Global.gamemode != "infinity":
 			get_tree().change_scene_to_file("res://scenes/win.tscn")
 			return
 		Global.speed += 0.05
@@ -87,9 +86,9 @@ func _ready() -> void:
 		if Global.gamemode == "stranded":
 			Transtition.trans("minigame_" + str(rng.randi_range(5, 10)))
 		elif Global.gamemode == "refined":
-			Transtition.trans("minigame_" + str(rng.randi_range(5, 10)))
+			Transtition.trans("minigame_" + str(rng.randi_range(11, 12)))
 		elif Global.gamemode == "infinity":
-			Transtition.trans("minigame_" + str(rng.randi_range(1, 10)))
+			Transtition.trans("minigame_" + str(rng.randi_range(1, 12)))
 		else:
 			Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path.
 

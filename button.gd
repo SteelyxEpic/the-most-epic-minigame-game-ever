@@ -13,6 +13,7 @@ var current_tween: Tween
 var play_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.add_to_button(self)
 	achieveanim.play("thorpy")
 	if Global.data["achieve"]["minigames_played"] >= 20 and Global.data["Gamemodes"].find(4) == -1:
 		Global.data["Gamemodes"].append(4)

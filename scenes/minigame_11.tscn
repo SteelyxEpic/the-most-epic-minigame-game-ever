@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cm53w6p8t3ouh"]
+
+[ext_resource type="Texture2D" uid="uid://b2iccp03syer1" path="res://awesomebg3.png" id="1_dsgya"]
+[ext_resource type="Script" uid="uid://c3qwfp4blxxct" path="res://scenes/minigame_11.gd" id="1_nsirj"]
+[ext_resource type="Texture2D" uid="uid://dr0osy26mx12a" path="res://furnace.png" id="2_nsirj"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="5_nsirj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
+size = Vector2(387.78116, 218.11072)
+
+[node name="minigame_11" type="Node2D" unique_id=213945438]
+script = ExtResource("1_nsirj")
+
+[node name="Awesomebg3" type="Sprite2D" parent="." unique_id=706594087]
+position = Vector2(584.5, 329.5)
+scale = Vector2(1.3470588, 1.3035715)
+texture = ExtResource("1_dsgya")
+
+[node name="Furnace" type="Sprite2D" parent="." unique_id=67962214]
+position = Vector2(282, 408.99997)
+scale = Vector2(1.07277, 1.0774336)
+texture = ExtResource("2_nsirj")
+
+[node name="Area2D" type="Area2D" parent="Furnace" unique_id=199061752]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furnace/Area2D" unique_id=1792672508]
+position = Vector2(2.7965393, -99.77417)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_nsirj")]
+position = Vector2(930, -19)
+scale = Vector2(0.69, 0.69)

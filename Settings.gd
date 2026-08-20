@@ -17,6 +17,7 @@ var music_volume: float = 0.5:
 		Global.data["Settings"]["Music"] = music_volume
 
 func _ready() -> void:
+	Music.add_to_button(self)
 	sfx_volume = Global.data["Settings"]["SFX"]
 	music_volume = Global.data["Settings"]["Music"]
 	music.value = music_volume

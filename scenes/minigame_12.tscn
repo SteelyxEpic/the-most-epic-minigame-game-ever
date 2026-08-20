@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cmr4ek3kr30uy"]
+
+[ext_resource type="Script" uid="uid://bh0yhm5ma3uaw" path="res://minigame_6.gd" id="1_15j3s"]
+[ext_resource type="Texture2D" uid="uid://w16xs458pf6m" path="res://awesomebg2.png" id="2_kt1yl"]
+[ext_resource type="Texture2D" uid="uid://c3suuetwowacg" path="res://Screenshot 2026-08-16 212248.png" id="3_0umx1"]
+[ext_resource type="Texture2D" uid="uid://4ttbxa7t6erw" path="res://hammer.png" id="3_kuivf"]
+[ext_resource type="Script" uid="uid://8xdbs32v4kxj" path="res://scenes/hammer.gd" id="4_1vemx"]
+[ext_resource type="Texture2D" uid="uid://cx4u6wy1kqptm" path="res://line.png" id="4_kuivf"]
+[ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="5_1vemx"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="6_i6k1d"]
+
+[node name="minigame_12" type="Node2D" unique_id=1412291407]
+script = ExtResource("1_15j3s")
+max = 0.4
+step = 0.2
+minigametwelve = true
+
+[node name="Coolbg5" type="Sprite2D" parent="." unique_id=2054755915]
+position = Vector2(579.5, 345.75)
+scale = Vector2(1.0238096, 1.0244055)
+texture = ExtResource("2_kt1yl")
+
+[node name="Hammer" type="Sprite2D" parent="." unique_id=2018541168]
+position = Vector2(530, 168.00005)
+rotation = 0.87266463
+scale = Vector2(0.45235375, 0.48947886)
+texture = ExtResource("3_kuivf")
+script = ExtResource("4_1vemx")
+
+[node name="Button" type="Button" parent="." unique_id=1348673964]
+offset_left = 394.0
+offset_top = 333.0
+offset_right = 764.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 80
+text = "Hammer!"
+
+[node name="slider" type="Sprite2D" parent="." unique_id=35576497]
+position = Vector2(556, 593.00006)
+scale = Vector2(6.4825006, 1.045)
+texture = ExtResource("3_0umx1")
+
+[node name="range" type="Node2D" parent="slider" unique_id=1233169026]
+position = Vector2(120, 0)
+
+[node name="Line" type="Sprite2D" parent="slider/range" unique_id=1153161227]
+position = Vector2(-75.002, 0)
+scale = Vector2(0.057551388, 0.32932255)
+texture = ExtResource("4_kuivf")
+
+[node name="Line2" type="Sprite2D" parent="slider/range" unique_id=55010530]
+position = Vector2(-44.999996, 0)
+scale = Vector2(0.057551388, 0.32932255)
+texture = ExtResource("4_kuivf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=105287666]
+offset_left = 70.00001
+offset_top = 572.0
+offset_right = 2509.0
+offset_bottom = 1084.0
+scale = Vector2(1e-05, 0.085)
+texture = ExtResource("5_1vemx")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("6_i6k1d")]
+position = Vector2(919.00006, -21.000002)
+scale = Vector2(0.73, 0.73)
+
+[node name="Timer" type="Timer" parent="." unique_id=1279704948]
+wait_time = 0.05
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="check"]
+[connection signal="timeout" from="Timer" to="." method="changeit"]

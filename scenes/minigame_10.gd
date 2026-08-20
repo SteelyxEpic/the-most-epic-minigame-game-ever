@@ -2,6 +2,7 @@ extends Node2D
 @onready var themed_timer: Node2D = $Time 
 @onready var remainder: RichTextLabel = $remainder
 @onready var light: Sprite2D = $Light
+@onready var dark: TextureRect = $BackBufferCopy/TextureRect
 const lever = preload("res://lever.tscn")
 
 var amount: int = 1
@@ -37,6 +38,7 @@ func turnon(index: int, state: int):
 		done.append(index)
 		remainder.text = str(amount - len(done)) + "/" + str(amount) + " remaining"
 		if len(done) >= amount:
+			dark.hide()
 			Global.data["achieve"]["lights_turned_on"] += 1
 			Transtition.trans("level_scene") # back to intermission
 	elif state == 0:

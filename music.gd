@@ -4,12 +4,15 @@ extends Node2D
 
 # Preload your button click sound effect
 var click_sound = preload("res://button1.mp3")
+var current
 
-func _on_node_added(node: Node) -> void:
-	# Check if the node entering the game is a Button
-	if node is Button:
-		node.pressed.connect(_on_button_pressed)
-
+func add_to_button(node:Node2D):
+	if current != node.name:
+		current = node.name
+		for i in get_all_descendants(node):
+			if i is Button:
+				i.disabled = false
+				i.pressed.connect(_on_button_pressed)
 func _on_button_pressed() -> void:
 	# Dynamically create and play an audio player so sounds can overlap
 	var audio_player = AudioStreamPlayer.new()
@@ -20,12 +23,18 @@ func _on_button_pressed() -> void:
 	
 	# Automatically delete the player from memory when the sound finishes
 	audio_player.finished.connect(audio_player.queue_free)
+
+func get_all_descendants(parent_node: Node) -> Array[Node]:
+	var list: Array[Node] = []
+	for child in parent_node.get_children():
+		list.append(child)
+		list.append_array(get_all_descendants(child)) # Recursive call
+	return list
 	
 func _ready() -> void:
 	# Initialize the bus volume on game start
 	_update_bus_volume("SFX", Global.data["Settings"]["SFX"])
 	_update_bus_volume("Music", Global.data["Settings"]["Music"])
-	get_tree().node_added.connect(_on_node_added)
 	
 func _update_bus_volume(names, value) -> void:
 	# Find the index position of the "SFX" bus

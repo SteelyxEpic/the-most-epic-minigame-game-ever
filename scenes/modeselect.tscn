@@ -100,6 +100,7 @@ offset_top = 279.0
 offset_right = 857.0
 offset_bottom = 358.0
 theme_override_font_sizes/font_size = 50
+disabled = true
 selected = 0
 item_count = 4
 popup/item_0/text = "Prologue"
@@ -136,6 +137,7 @@ offset_top = 439.0
 offset_right = 719.0
 offset_bottom = 556.0
 theme_override_font_sizes/font_size = 60
+disabled = true
 text = "Ready!"
 
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

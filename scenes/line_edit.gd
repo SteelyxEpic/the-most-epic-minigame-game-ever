@@ -25,7 +25,7 @@ func _on_text_changed(new_text: String) -> void:
 func _on_text_submitted(new_text: String) -> void:
 	if(text.to_int() < 1):
 		text = "1"
-	elif(text.to_int() > 100):
-		text = "100"
+	elif(text.to_int() > 50):
+		text = "50"
 	Global.minigames_doing = text.to_int()
 	

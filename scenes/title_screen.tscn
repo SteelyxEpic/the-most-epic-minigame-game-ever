@@ -248,16 +248,19 @@ theme_override_constants/separation = 30
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1599450657]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+disabled = true
 text = "Play!"
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=339284271]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+disabled = true
 text = "Settings"
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=2097902920]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+disabled = true
 text = "Quit ;-;"
 
 [node name="acheivements" type="TextureButton" parent="." unique_id=1245705427]

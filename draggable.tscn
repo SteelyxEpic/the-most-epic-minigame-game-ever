@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dge30kmij2tom"]
+
+[ext_resource type="Texture2D" uid="uid://c4hccm3rd5t2r" path="res://ore.png" id="1_law6f"]
+[ext_resource type="Script" uid="uid://bpwylr61u65s0" path="res://drag_and_drop.gd" id="2_u6fe1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+radius = 390.28836
+
+[node name="draggable" type="TextureButton" unique_id=1579706483]
+offset_left = 329.99997
+offset_top = 76.999985
+offset_right = 1354.0
+offset_bottom = 589.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(505.00024, 235.00012)
+pivot_offset_ratio = Vector2(-0.085, -0.185)
+texture_normal = ExtResource("1_law6f")
+script = ExtResource("2_u6fe1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=939233670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=490664942]
+position = Vector2(513.1591, 253.87952)
+scale = Vector2(1, 0.57)
+shape = SubResource("CircleShape2D_4kxuq")
