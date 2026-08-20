@@ -86,7 +86,11 @@ func _ready() -> void:
 		if Global.gamemode == "stranded":
 			Transtition.trans("minigame_" + str(rng.randi_range(5, 10)))
 		elif Global.gamemode == "refined":
-			Transtition.trans("minigame_" + str(rng.randi_range(11, 12)))
+			var num = rng.randi_range(10, 12)
+			if num == 10:
+				Transtition.trans("minigame_3")
+			else:
+				Transtition.trans("minigame_" + str(num))
 		elif Global.gamemode == "infinity":
 			Transtition.trans("minigame_" + str(rng.randi_range(1, 12)))
 		else:
