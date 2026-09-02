@@ -67,7 +67,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_7v0go")]
-position = Vector2(935, -16)
+position = Vector2(960, 19)
 scale = Vector2(0.675, 0.675)
 
 [node name="Button" type="Button" parent="." unique_id=1033550628]

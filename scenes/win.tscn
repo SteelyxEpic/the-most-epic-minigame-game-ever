@@ -70,4 +70,4 @@ scale = Vector2(1.0167547, 0.86107624)
 texture = ExtResource("4_tylv2")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_4826q")]
-position = Vector2(831, 433)
+position = Vector2(888, 410)

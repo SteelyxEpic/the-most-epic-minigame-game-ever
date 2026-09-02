@@ -29,5 +29,5 @@ scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_mti6b")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_nsirj")]
-position = Vector2(930, -19)
+position = Vector2(953, 14)
 scale = Vector2(0.69, 0.69)

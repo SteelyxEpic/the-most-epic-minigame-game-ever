@@ -16,8 +16,8 @@ scale = Vector2(1.4560801, 1.5785891)
 texture = ExtResource("1_xdwh2")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_c3ytc")]
-position = Vector2(865, -39)
-scale = Vector2(0.875, 0.98630136)
+position = Vector2(976, 3)
+scale = Vector2(0.67, 0.67)
 
 [node name="remain" type="RichTextLabel" parent="." unique_id=1308353246]
 offset_left = 23.0

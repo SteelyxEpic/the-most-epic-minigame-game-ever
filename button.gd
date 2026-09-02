@@ -26,12 +26,10 @@ func _ready() -> void:
 		achieve.scale -= Vector2(0.1, 0.1)
 		achievebling.hide())
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+func delete():
+	Global.override()
+	for i in buttoncontainer.get_children():
+		i.text = "Please reload the game"
 func _on_button_3_pressed() -> void:
 	Global.speed = 1
 	Global.lives = 5

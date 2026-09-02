@@ -6,7 +6,6 @@ extends Node2D
 @onready var life_4: TextureRect = $Lives/life4
 @onready var life_5: TextureRect = $Lives/life5
 @onready var level: RichTextLabel = $Level
-@onready var timer: RichTextLabel = $Timer
 @onready var camera:Camera2D = $Camera2D
 @onready var crack:AudioStreamPlayer2D = $crack
 @onready var particles:CPUParticles2D = $CPUParticles2D
@@ -15,6 +14,7 @@ extends Node2D
 @onready var awesome:Texture2D = load("res://awesomebg2.png") as Texture2D
 @onready var inf: Texture2D = load("res://infbg.png") as Texture2D
 @onready var bg: TextureRect = $bg
+@onready var slide: TextureRect = $slide
 
 
 var time
@@ -120,11 +120,11 @@ func Timer(start_time: float): # making a new function for timer countdown!
 	time = roundi(start_time*10)/10 # make the timer, which is reflected through the timer text, start at your desired number
 	
 	while time > 0.0: # run if timer hasnt reached 0
-		await wait(0.1) # asks script to wait on this function. the 'wait' name for the function does nothing here, as await is just telling the scrpit to wait for the function to complete before progressing
-		time -= 0.1 # remove 0.1
-		timer.text = str(time)
+		await wait(0.05) # asks script to wait on this function. the 'wait' name for the function does nothing here, as await is just telling the scrpit to wait for the function to complete before progressing
+		time -= 0.05 # remove 0.1
+		slide.scale.x = remap(time, 0, start_time, 0, 0.4)
 		# progressively get the value smaller and smaller
-	
+	slide.scale.x = 0
 	#when timer reaches 0
 	return
 

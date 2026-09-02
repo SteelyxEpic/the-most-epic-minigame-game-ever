@@ -17,8 +17,8 @@ scale = Vector2(1.6624389, 1.7250342)
 texture = ExtResource("1_mxhla")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("2_ewl5d")]
-position = Vector2(932.00006, -23.000002)
-scale = Vector2(0.6907378, 0.69796234)
+position = Vector2(950.99994, 1.9073486e-06)
+scale = Vector2(0.755, 0.755)
 
 [node name="Arrow" type="Sprite2D" parent="." unique_id=90294614]
 position = Vector2(675, 350)

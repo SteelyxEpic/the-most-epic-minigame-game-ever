@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://bmhflcrcuh5v3"]
 
 [ext_resource type="Script" uid="uid://gvcjmwrq76jr" path="res://timer.gd" id="1_87xcn"]
+[ext_resource type="Texture2D" uid="uid://dwh8avso1nwgv" path="res://clock.png" id="2_d1mv6"]
+[ext_resource type="Texture2D" uid="uid://cgeuruero0pgp" path="res://clockover.png" id="3_63st2"]
+[ext_resource type="Texture2D" uid="uid://cjx2tm4wql1w8" path="res://clockhand.png" id="4_qdis7"]
 
 [node name="Time" type="Node2D" unique_id=463451459]
+top_level = true
 script = ExtResource("1_87xcn")
 
-[node name="timer" type="RichTextLabel" parent="." unique_id=1966119297]
-offset_right = 124.70168
-offset_bottom = 109.42267
-scale = Vector2(2.550086, 2.047108)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/normal_font_size = 75
-text = "0.0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Timer" type="Timer" parent="timer" unique_id=109919454]
+[node name="Timer" type="Timer" parent="." unique_id=109919454]
 wait_time = 0.1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2112543418]
+offset_left = 22.0
+offset_top = 6.0
+offset_right = 262.0
+offset_bottom = 234.0
+max_value = 360.0
+fill_mode = 4
+texture_under = ExtResource("2_d1mv6")
+texture_progress = ExtResource("3_63st2")
+
+[node name="TextureRect" type="TextureRect" parent="TextureProgressBar" unique_id=414017242]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 228.0
+pivot_offset = Vector2(124, 122)
+texture = ExtResource("4_qdis7")

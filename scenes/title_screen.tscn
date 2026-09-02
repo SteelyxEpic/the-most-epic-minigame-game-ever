@@ -264,10 +264,10 @@ disabled = true
 text = "Quit ;-;"
 
 [node name="acheivements" type="TextureButton" parent="." unique_id=1245705427]
-offset_left = -29.999985
-offset_top = 403.00006
-offset_right = 236.00002
-offset_bottom = 762.00006
+offset_left = -50.0
+offset_top = 404.0
+offset_right = 216.0
+offset_bottom = 763.0
 rotation = -0.08726646
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(132.5135, 172.65381)
@@ -283,6 +283,14 @@ texture = ExtResource("8_cs5ya")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="acheivements" unique_id=161657905]
 libraries/ = SubResource("AnimationLibrary_frs5l")
 
+[node name="delete" type="Button" parent="." unique_id=1669454440]
+offset_left = 1020.0
+offset_top = 599.0
+offset_right = 1140.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 20
+text = "Delete save"
+
 [connection signal="mouse_entered" from="VBoxContainer/Button3" to="." method="_on_button_3_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/Button3" to="." method="_on_button_3_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
@@ -290,3 +298,4 @@ libraries/ = SubResource("AnimationLibrary_frs5l")
 [connection signal="mouse_exited" from="VBoxContainer/Button2" to="." method="_on_button_2_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="delete" to="." method="delete"]

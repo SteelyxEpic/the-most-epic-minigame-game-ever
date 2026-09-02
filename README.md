@@ -37,6 +37,8 @@ Put the ore in and leave the stone out! Make sure to put all the ores in or else
 Hammer crazed madness!:
 Smash into the ore at the right power! Too much power and you might shatter it and too little....well you know what happens when there's too little (nothing~)
 
+
+
 Controls:
 All minigames will use either your mouse, arrow keys or space bar
 

@@ -78,7 +78,7 @@ offset_bottom = 40.0
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=1350504813]
 position = Vector2(617, 431)
-scale = Vector2(17.873543, 2.1336)
+scale = Vector2(17.873543, 4.6136)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1514953574]
 position = Vector2(20, 20)
@@ -86,7 +86,7 @@ shape = SubResource("RectangleShape2D_4kxuq")
 
 [node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1918837165]
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 39.448586
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=510123603]
 position = Vector2(-314.99997, 610.99994)

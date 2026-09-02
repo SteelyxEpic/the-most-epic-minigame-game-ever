@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dsun0wnk1t536" path="res://scenes/background.gd" id="3_c8xsp"]
 [ext_resource type="Script" uid="uid://cunywc02jbv77" path="res://scenes/camera_2d.gd" id="5_fkwfp"]
 [ext_resource type="AudioStream" uid="uid://brfa2efyxs0p5" path="res://crack.mp3" id="6_eohcs"]
+[ext_resource type="Texture2D" uid="uid://c3suuetwowacg" path="res://Screenshot 2026-08-16 212248.png" id="7_ojpky"]
+[ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="8_1lj4f"]
 
 [sub_resource type="Animation" id="Animation_c8xsp"]
 resource_name = "suspense"
@@ -83,16 +85,6 @@ text = "Level 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="RichTextLabel" parent="." unique_id=1208779806]
-offset_left = 499.0
-offset_top = 546.0
-offset_right = 627.0
-offset_bottom = 615.0
-theme_override_font_sizes/normal_font_size = 50
-text = "0.0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=835383405]
 libraries/ = SubResource("AnimationLibrary_fkwfp")
 
@@ -105,3 +97,16 @@ stream = ExtResource("6_eohcs")
 volume_db = -0.54
 pitch_scale = 1.67
 bus = &"SFX"
+
+[node name="slider" type="Sprite2D" parent="." unique_id=61775869]
+position = Vector2(556, 593.00006)
+scale = Vector2(6.4825006, 1.045)
+texture = ExtResource("7_ojpky")
+
+[node name="slide" type="TextureRect" parent="." unique_id=1274544509]
+offset_left = 70.00001
+offset_top = 572.0
+offset_right = 2509.0
+offset_bottom = 1084.0
+scale = Vector2(1e-05, 0.085)
+texture = ExtResource("8_1lj4f")

@@ -62,7 +62,7 @@ scale = Vector2(1e-05, 0.085)
 texture = ExtResource("5_1vemx")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("6_i6k1d")]
-position = Vector2(919.00006, -21.000002)
+position = Vector2(948, 17.999994)
 scale = Vector2(0.73, 0.73)
 
 [node name="Timer" type="Timer" parent="." unique_id=1279704948]
