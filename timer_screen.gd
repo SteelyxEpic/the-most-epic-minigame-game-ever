@@ -14,6 +14,7 @@ extends Node2D
 @onready var awesome:Texture2D = load("res://awesomebg2.png") as Texture2D
 @onready var inf: Texture2D = load("res://infbg.png") as Texture2D
 @onready var bg: TextureRect = $bg
+@onready var coin: Node2D = $coin
 @onready var slide: TextureRect = $slide
 
 
@@ -21,6 +22,7 @@ var time
 
 func _ready() -> void:
 	Global.save()
+	coin.get_node("RichTextLabel").text = "x"+Global.data["coins"]
 	if Global.gamemode == "stranded":
 		bg.texture = cool
 	elif Global.gamemode == "refined":

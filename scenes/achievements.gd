@@ -14,7 +14,14 @@ func _ready() -> void:
 		Transtition.trans("title_screen")
 )
 	change(0)
-		
+	re.mouse_entered.connect(func():
+		re.scale = Vector2(0.6,0.6))
+	fo.mouse_entered.connect(func():
+		fo.scale = Vector2(0.6,0.6))
+	re.mouse_exited.connect(func():
+		re.scale = Vector2(0.55,0.55))
+	fo.mouse_exited.connect(func():
+		fo.scale = Vector2(0.55,0.55))
 
 func change(i = 1):
 	index = i * 4

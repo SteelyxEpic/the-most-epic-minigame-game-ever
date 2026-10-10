@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://brfa2efyxs0p5" path="res://crack.mp3" id="6_eohcs"]
 [ext_resource type="Texture2D" uid="uid://c3suuetwowacg" path="res://Screenshot 2026-08-16 212248.png" id="7_ojpky"]
 [ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="8_1lj4f"]
+[ext_resource type="Texture2D" uid="uid://cwiyrlwwkrx4f" path="res://coins.png" id="9_1lj4f"]
 
 [sub_resource type="Animation" id="Animation_c8xsp"]
 resource_name = "suspense"
@@ -110,3 +111,21 @@ offset_right = 2509.0
 offset_bottom = 1084.0
 scale = Vector2(1e-05, 0.085)
 texture = ExtResource("8_1lj4f")
+
+[node name="coin" type="Node2D" parent="." unique_id=500974915]
+
+[node name="Coins" type="Sprite2D" parent="coin" unique_id=772456086]
+position = Vector2(921.99994, 63.000023)
+scale = Vector2(0.49583334, 0.5263158)
+texture = ExtResource("9_1lj4f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="coin" unique_id=971674377]
+offset_left = 978.0
+offset_top = 11.0
+offset_right = 1121.0
+offset_bottom = 116.0
+theme_override_font_sizes/normal_font_size = 70
+text = "x0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 161

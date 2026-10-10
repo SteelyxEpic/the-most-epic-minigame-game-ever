@@ -34,21 +34,23 @@ text = "Back"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2060123583]
 visible = false
-offset_left = -61.0
-offset_top = 393.0
-offset_right = 154.0
-offset_bottom = 537.0
+offset_left = -118.0
+offset_top = 255.99997
+offset_right = 97.0
+offset_bottom = 399.99997
 rotation = -1.5755912
 scale = Vector2(0.55, 0.55)
+pivot_offset = Vector2(105.08716, 76.8684)
 texture_normal = ExtResource("3_jqgop")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=1923320450]
-offset_left = 1226.0
-offset_top = 282.0
-offset_right = 1441.0
-offset_bottom = 426.0
+offset_left = 1095.0
+offset_top = 297.00003
+offset_right = 1310.0
+offset_bottom = 441.00003
 rotation = -4.709359
 scale = Vector2(0.55, 0.55)
+pivot_offset = Vector2(105.60828, 50.589355)
 texture_normal = ExtResource("3_jqgop")
 
 [connection signal="pressed" from="TextureButton" to="." method="returns"]
