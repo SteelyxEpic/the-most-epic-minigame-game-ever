@@ -1,16 +1,18 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+@export var SPEED = 300.0
 
-
+func _ready() -> void:
+	SPEED *= Global.speed
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
+	var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 	if direction:
 		velocity = direction * SPEED
 	else:
+		scale.x = abs(scale.x) * sign(velocity.x)
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 

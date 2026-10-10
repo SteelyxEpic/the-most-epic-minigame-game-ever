@@ -22,7 +22,7 @@ var time
 
 func _ready() -> void:
 	Global.save()
-	coin.get_node("RichTextLabel").text = "x"+Global.data["coins"]
+	coin.get_node("RichTextLabel").text = "x"+str(Global.data["coins"])
 	if Global.gamemode == "stranded":
 		bg.texture = cool
 	elif Global.gamemode == "refined":

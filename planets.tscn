@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c0tnc7ntbr7ew"]
+
+[ext_resource type="Script" uid="uid://b5xp24hxt7v0a" path="res://scenes/planets.gd" id="1_gl5jy"]
+[ext_resource type="Texture2D" uid="uid://cd344hgj4rthv" path="res://planet.png" id="2_2nkqd"]
+[ext_resource type="Script" uid="uid://bn6bguq8jae54" path="res://scenes/animation_player.gd" id="3_4ctip"]
+
+[sub_resource type="Animation" id="Animation_v5ebm"]
+resource_name = "Floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-108, -49), Vector2(-108, -58.975), Vector2(-108, -49)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1cg4"]
+_data = {
+&"Floating": SubResource("Animation_v5ebm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+radius = 15.248279
+
+[node name="Planets" type="Node2D" unique_id=1018876537]
+script = ExtResource("1_gl5jy")
+
+[node name="Planet" type="TextureRect" parent="." unique_id=998547609]
+offset_left = -108.0
+offset_top = -49.0
+offset_right = 704.0
+offset_bottom = 359.00085
+scale = Vector2(0.25625923, 0.2475751)
+texture = ExtResource("2_2nkqd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=972099767]
+root_node = NodePath("../Planet")
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+script = ExtResource("3_4ctip")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1088369025]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1779574651]
+scale = Vector2(7.02884, 4.656505)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
