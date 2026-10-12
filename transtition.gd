@@ -8,6 +8,8 @@ func trans(scene: String):
 	tween = create_tween()
 	tween.tween_property(self, "position:x", -1550, 1/Global.speed)
 	await get_tree().create_timer(1/Global.speed).timeout
+	if scene == "level_scene" and Global.test:
+		scene = "tutorials"
 	await get_tree().change_scene_to_file("res://scenes/"+ scene + ".tscn")
 	
 	
@@ -15,7 +17,7 @@ func trans(scene: String):
 	tween = create_tween()
 	tween.tween_property(self, "position:x", -3000, 1/Global.speed)
 	await get_tree().create_timer(1/Global.speed).timeout
-	Music.add_to_button(get_tree().current_scene)
+	#Music.add_to_button(get_tree().current_scene)
 	position.x = 0
 	transtitioning = false
 	

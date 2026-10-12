@@ -10,23 +10,22 @@ scale = Vector2(0.2403324, 0.29669455)
 motion_mode = 1
 script = ExtResource("1_4cq66")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1935882825]
-position = Vector2(-337.03323, -20.222818)
-scale = Vector2(0.6956779, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799216182]
+scale = Vector2(42.847004, 12.930999)
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="Plane" type="Sprite2D" parent="." unique_id=1715395117]
+texture = ExtResource("1_l3rv8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Plane" unique_id=1935882825]
+position = Vector2(-337.0332, -13.481879)
+scale = Vector2(0.6956779, 1.0000001)
 amount = 50
 lifetime = 2.0
 emission_shape = 3
 emission_rect_extents = Vector2(13.89, 117.675)
 gravity = Vector2(-400, 0)
 color = Color(1, 0.627451, 0.039215688, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799216182]
-scale = Vector2(42.847004, 12.930999)
-shape = SubResource("CircleShape2D_4kxuq")
-
-[node name="Plane" type="Sprite2D" parent="." unique_id=1715395117]
-scale = Vector2(1, 0.99999994)
-texture = ExtResource("1_l3rv8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1796203705]
 

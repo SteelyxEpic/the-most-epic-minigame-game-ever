@@ -1,0 +1,67 @@
+[
+  {
+	"name": "Catch the Planets",
+	"description": "On the loose! Planets have been spotted. Chase them down and collect as much data as you can!",
+	"how_to_play": "Move around and catch all the planets before time runs out."
+  },
+  {
+	"name": "Bounty Hunters Aboard!",
+	"description": "Aliens are after the same target as you! Stay ahead of them or risk being left behind.",
+	"how_to_play": "Tap on the aliens until none remains and before time runs out"
+  },
+  {
+	"name": "Dodging Asteroids",
+	"description": "Asteroids inbound! Pilot your ship through the deadly field of space rocks.",
+	"how_to_play": "Dodge the asteroids and survive until the timer ends."
+  },
+  {
+	"name": "Sequence Reset",
+	"description": "Your ship needs recalibration! Remember the pattern and enter it correctly.",
+	"how_to_play": "Watch the sequence, then repeat it in the correct order."
+  },
+  {
+	"name": "Lever Fixer",
+	"description": "Your ship was damaged in the crash! Adjust the controls and get everything working again.",
+	"how_to_play": "Flip the levers to match the required code."
+  },
+  {
+	"name": "Fuel Gauge Fanatic",
+	"description": "Running low on fuel! Refill the tank to the target amount.",
+	"how_to_play": "Use the lever to increase fuel level until it matches the marker."
+  },
+  {
+	"name": "Meteor Shower",
+	"description": "A meteor shower is approaching! Protect your ship from incoming space debris.",
+	"how_to_play": "Move out of the way and avoid getting hit by meteors."
+  },
+  {
+	"name": "Here to Earth, Are You There?!",
+	"description": "Your only hope is Earth. Point the antenna and send a distress signal!",
+	"how_to_play": "Rotate the antenna toward Earth and transmit the signal."
+  },
+  {
+	"name": "Earth Found!",
+	"description": "The satellite has gone rogue! Spot Earth and stop the scanner before it moves on.",
+	"how_to_play": "Find Earth and press the stop button as quickly as possible."
+  },
+  {
+	"name": "Lights Out!",
+	"description": "The power's out! Find the switch before everything goes dark for good.",
+	"how_to_play": "Search the area and turn the lights back on."
+  },
+  {
+	"name": "Ore Sorting, More Smelting!",
+	"description": "Time to make some profit! Sort valuable ore from worthless stone.",
+	"how_to_play": "Collect all ore and avoid picking up rocks."
+  },
+  {
+	"name": "Hammer-Crazed Madness!",
+	"description": "Precision is everything! Strike the ore with just the right amount of force.",
+	"how_to_play": "Charge your hammer and release at the correct power level."
+  },
+  {
+	"name": "Distress disguise!",
+	"description": "The aliens are after you! Quick! Make a disguise now!",
+	"how_to_play": "Change the visual of the alien to match the alien in the box on the top left."
+  }
+]

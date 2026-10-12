@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://drl4ttftoo328"]
+
+[ext_resource type="Script" uid="uid://ds7b7xmu2lp4f" path="res://scenes/tutorials.gd" id="1_c7q6y"]
+[ext_resource type="Texture2D" uid="uid://cpaql5uxopkbc" path="res://minigameimages/1.png" id="2_c7q6y"]
+[ext_resource type="Texture2D" uid="uid://calsghdgcn481" path="res://infbg.png" id="2_jdpn0"]
+[ext_resource type="Texture2D" uid="uid://7obo83rent2p" path="res://spacebg.png" id="3_3y2k0"]
+
+[node name="tutorials" type="Node2D" unique_id=1290899635]
+script = ExtResource("1_c7q6y")
+
+[node name="Infbg" type="Sprite2D" parent="." unique_id=1819590997]
+position = Vector2(583, 405.00003)
+scale = Vector2(1.0343915, 1.1038799)
+texture = ExtResource("2_jdpn0")
+
+[node name="Spacebg" type="Sprite2D" parent="." unique_id=164857521]
+position = Vector2(589, 44.499996)
+scale = Vector2(1, 0.18164063)
+texture = ExtResource("3_3y2k0")
+
+[node name="Spacebg2" type="Sprite2D" parent="." unique_id=426060028]
+self_modulate = Color(1, 1, 1, 0.39607844)
+position = Vector2(912.75, 338.25)
+scale = Vector2(0.19372694, 0.9130859)
+texture = ExtResource("3_3y2k0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1303836749]
+offset_left = 15.0
+offset_top = 114.99999
+offset_right = 1170.0
+offset_bottom = 723.0
+scale = Vector2(0.57056594, 0.6260146)
+texture = ExtResource("2_c7q6y")
+
+[node name="title" type="RichTextLabel" parent="." unique_id=1606762936]
+offset_left = 39.0
+offset_top = 7.0
+offset_right = 1104.0
+offset_bottom = 98.0
+theme_override_font_sizes/normal_font_size = 60
+text = "TEST TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="RichTextLabel" parent="." unique_id=359644418]
+offset_left = 684.0
+offset_top = 102.0
+offset_right = 1141.0
+offset_bottom = 322.0
+theme_override_font_sizes/normal_font_size = 30
+text = "TEST TITLE"
+
+[node name="play" type="RichTextLabel" parent="." unique_id=114522421]
+offset_left = 687.0
+offset_top = 382.0
+offset_right = 1129.0
+offset_bottom = 544.0
+theme_override_font_sizes/normal_font_size = 30
+text = "TEST TITLE"
+
+[node name="play2" type="RichTextLabel" parent="." unique_id=2098011487]
+offset_left = 683.0
+offset_top = 334.0
+offset_right = 1125.0
+offset_bottom = 385.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b]How To Play:[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="prev" type="Button" parent="." unique_id=1016238518]
+offset_left = 33.0
+offset_top = 571.0
+offset_right = 127.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 40
+text = "Prev"
+
+[node name="next" type="Button" parent="." unique_id=1221587144]
+offset_left = 1042.0
+offset_top = 575.0
+offset_right = 1136.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 40
+text = "Next"
+
+[node name="test" type="Button" parent="." unique_id=1105072380]
+offset_left = 491.0
+offset_top = 571.0
+offset_right = 664.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 40
+text = "Playtest"
+
+[node name="leave" type="Button" parent="." unique_id=761529527]
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 186.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 40
+text = "Return"

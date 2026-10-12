@@ -6,23 +6,7 @@ extends Node2D
 var click_sound = preload("res://button1.mp3")
 var current
 
-func add_to_button(node:Node2D):
-	if current != node.name:
-		current = node.name
-		for i in get_all_descendants(node):
-			if i is Button:
-				i.disabled = false
-				i.pressed.connect(_on_button_pressed)
-func _on_button_pressed() -> void:
-	# Dynamically create and play an audio player so sounds can overlap
-	var audio_player = AudioStreamPlayer.new()
-	audio_player.stream = click_sound
-	add_child(audio_player)
-	
-	audio_player.play()
-	
-	# Automatically delete the player from memory when the sound finishes
-	audio_player.finished.connect(audio_player.queue_free)
+
 
 func get_all_descendants(parent_node: Node) -> Array[Node]:
 	var list: Array[Node] = []

@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://tgwk3yhq5ssk"]
+
+[ext_resource type="Script" uid="uid://d1bctkfmyixgl" path="res://scenes/minigame_13.gd" id="1_1wew1"]
+[ext_resource type="Texture2D" uid="uid://bo3qkxaer2h86" path="res://minigame13/alienempty.png" id="2_076gw"]
+[ext_resource type="Texture2D" uid="uid://wg6ej12o4e1b" path="res://alienbg.png" id="2_i2c83"]
+[ext_resource type="Texture2D" uid="uid://yrhrnilckgtj" path="res://minigame13/aliennose1.png" id="5_qrs3p"]
+[ext_resource type="Texture2D" uid="uid://cqh0pymaie3rl" path="res://minigame13/match.png" id="6_opgkx"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="7_56ux2"]
+[ext_resource type="Texture2D" uid="uid://dt84gde7fbnsy" path="res://minigame13/alieneye1.png" id="7_i2c83"]
+[ext_resource type="Texture2D" uid="uid://bpan76n4fvwke" path="res://minigame13/alienmouth1.png" id="8_1nqe6"]
+[ext_resource type="Texture2D" uid="uid://c5uqgantq26nd" path="res://minigame13/arrow.png" id="8_f6bbu"]
+
+[node name="minigame_13" type="Node2D" unique_id=970532914]
+script = ExtResource("1_1wew1")
+
+[node name="Alienbg" type="Sprite2D" parent="." unique_id=163102711]
+position = Vector2(578.00006, 285.00003)
+scale = Vector2(1.2774256, 1.6577445)
+texture = ExtResource("2_i2c83")
+
+[node name="Alienempty" type="Sprite2D" parent="." unique_id=1731366700]
+position = Vector2(593, 288)
+scale = Vector2(1.3785845, 1.4410851)
+texture = ExtResource("2_076gw")
+
+[node name="alieneye" type="TextureRect" parent="Alienempty" unique_id=64527769]
+offset_left = -517.92255
+offset_top = -266.46588
+offset_right = 506.07745
+offset_bottom = 245.53412
+texture = ExtResource("7_i2c83")
+
+[node name="alienmouth" type="TextureRect" parent="Alienempty" unique_id=1593070611]
+offset_left = -517.92255
+offset_top = -266.46588
+offset_right = 506.07745
+offset_bottom = 245.53412
+texture = ExtResource("8_1nqe6")
+
+[node name="aliennose" type="TextureRect" parent="Alienempty" unique_id=1310737477]
+offset_left = -517.92255
+offset_top = -266.46588
+offset_right = 506.07745
+offset_bottom = 245.53412
+texture = ExtResource("5_qrs3p")
+
+[node name="Match" type="Sprite2D" parent="." unique_id=406052993]
+position = Vector2(175.00002, 152)
+scale = Vector2(0.55040324, 0.5248447)
+texture = ExtResource("6_opgkx")
+
+[node name="matching" type="Sprite2D" parent="Match" unique_id=490628612]
+position = Vector2(-9.084278, -9.526627)
+scale = Vector2(0.6922099, 0.76363975)
+texture = ExtResource("2_076gw")
+
+[node name="alieneye" type="TextureRect" parent="Match/matching" unique_id=1303345964]
+offset_left = -522.31714
+offset_top = -281.94156
+offset_right = 501.68286
+offset_bottom = 230.05844
+texture = ExtResource("7_i2c83")
+
+[node name="aliennose" type="TextureRect" parent="Match/matching" unique_id=401306817]
+offset_left = -522.31714
+offset_top = -281.94156
+offset_right = 501.68286
+offset_bottom = 230.05844
+texture = ExtResource("5_qrs3p")
+
+[node name="alienmouth" type="TextureRect" parent="Match/matching" unique_id=2083012758]
+offset_left = -522.31714
+offset_top = -281.94156
+offset_right = 501.68286
+offset_bottom = 230.05844
+texture = ExtResource("8_1nqe6")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("7_56ux2")]
+z_index = 1000
+position = Vector2(964.00006, 13.999992)
+scale = Vector2(0.655, 0.655)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1553541083]
+offset_left = 901.0
+offset_top = 286.0
+offset_right = 1192.0
+offset_bottom = 547.0
+scale = Vector2(0.47560975, 0.43457943)
+texture_normal = ExtResource("8_f6bbu")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=989456753]
+offset_left = 908.0
+offset_top = 387.00003
+offset_right = 1199.0
+offset_bottom = 648.0
+scale = Vector2(0.47560975, 0.43457943)
+texture_normal = ExtResource("8_f6bbu")
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=769036592]
+offset_left = 912.0
+offset_top = 491.0
+offset_right = 1203.0
+offset_bottom = 752.0
+scale = Vector2(0.47560975, 0.43457943)
+texture_normal = ExtResource("8_f6bbu")
+
+[node name="TextureButton4" type="TextureButton" parent="." unique_id=1499462953]
+offset_left = 311.516
+offset_top = 275.0
+offset_right = 602.516
+offset_bottom = 536.0
+scale = Vector2(-0.476, 0.435)
+texture_normal = ExtResource("8_f6bbu")
+
+[node name="TextureButton5" type="TextureButton" parent="." unique_id=983604029]
+offset_left = 318.516
+offset_top = 376.00003
+offset_right = 609.516
+offset_bottom = 637.0
+scale = Vector2(-0.476, 0.435)
+texture_normal = ExtResource("8_f6bbu")
+
+[node name="TextureButton6" type="TextureButton" parent="." unique_id=639319713]
+offset_left = 322.516
+offset_top = 482.0
+offset_right = 613.516
+offset_bottom = 743.0
+scale = Vector2(-0.476, 0.435)
+texture_normal = ExtResource("8_f6bbu")

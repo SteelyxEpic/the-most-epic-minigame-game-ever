@@ -4,6 +4,7 @@ extends Node2D
 @onready var planets: PackedScene = load("res://planets.tscn")
 # ^^^ You dragged this in the scene by the way 
 
+signal collected
 
 var needed = 3
 var garlic_collected = 0 # just keeping track of garlic collected
@@ -12,12 +13,15 @@ var timer_end = false # boolean (true or false) stating whether the timer ended
 func _ready() -> void:
 	while Transtition.transtitioning:
 		await get_tree().process_frame
+	collected.connect(_on_planets_collected)
 	needed = randi_range(3, 3 + Global.minigames_done/2)
+	$remainder.text = str(needed) + " remaining"
 	for i in range(needed):
 		var instance = planets.instantiate()
 		instance.name = str(i)
+		instance.main = self
 		add_child(instance)
-		instance.position = Vector2(randf_range(0, get_viewport_rect().size.x/1.5), randf_range(0, get_viewport_rect().size.y/1.5))
+		instance.position = Vector2(randf_range(0, get_viewport_rect().size.x/6.3)*4, randf_range(0, get_viewport_rect().size.y/6.3)*4)
 	await themed_timer.Timer(10.0 / Global.speed) #accessing a function from this node
 	if !Transtition.transtitioning:
 		Global.lost = true
@@ -36,6 +40,7 @@ func _on_planets_collected() -> void:
 	
 	sound.play()
 	garlic_collected = garlic_collected +1
+	$remainder.text = str(needed - garlic_collected) + " remaining"
 	if garlic_collected == needed: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
 			themed_timer.cont = false
 			await wait(1/Global.speed)

@@ -13,16 +13,16 @@ scale = Vector2(1.2, 1.2)
 zoom = Vector2(0.9, 0.9)
 
 [node name="Achievement" parent="." unique_id=1695346173 instance=ExtResource("1_5e7lm")]
-position = Vector2(-22, 36)
+position = Vector2(-19, 36)
 
 [node name="Achievement2" parent="." unique_id=249456221 instance=ExtResource("1_5e7lm")]
-position = Vector2(591, 38)
+position = Vector2(594, 38)
 
 [node name="Achievement3" parent="." unique_id=1505852702 instance=ExtResource("1_5e7lm")]
-position = Vector2(-8, 337)
+position = Vector2(-5, 337)
 
 [node name="Achievement4" parent="." unique_id=107377023 instance=ExtResource("1_5e7lm")]
-position = Vector2(608, 342)
+position = Vector2(611, 342)
 
 [node name="Back" type="Button" parent="." unique_id=720402558]
 offset_left = -40.0

@@ -30,8 +30,12 @@ func change(i = 1):
 		ACHEIVE[x].get_child(0).get_child(1).text = ""
 		if(x + index >= len(Global.data["achieve"])):
 			continue
-		ACHEIVE[x].get_child(0).get_child(0).text = Global.data["achieve"].keys()[x + index]
-		ACHEIVE[x].get_child(0).get_child(1).text = str(Global.data["achieve"].values()[x + index])
+		var title = ""
+		for s in Global.data["achieve"].keys()[x + index].split("_"):
+			title += s.capitalize() + " "
+		ACHEIVE[x].get_child(0).get_child(0).text = title
+		var value = str(int(Global.data["achieve"].values()[x + index]))
+		ACHEIVE[x].get_child(0).get_child(1).text = "-" if value == "0" else value
 func next():
 	change(index/4 + 1)
 	re.show()

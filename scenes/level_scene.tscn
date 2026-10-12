@@ -30,10 +30,10 @@ texture = ExtResource("2_lwxgr")
 script = ExtResource("3_c8xsp")
 
 [node name="Lives" type="HBoxContainer" parent="." unique_id=2028287993]
-offset_left = 113.0
-offset_top = 118.0
-offset_right = 1053.0
-offset_bottom = 292.0
+offset_left = 119.0
+offset_top = 92.0
+offset_right = 1059.0
+offset_bottom = 266.0
 theme_override_constants/separation = -200
 
 [node name="life1" type="TextureRect" parent="Lives" unique_id=1141983181]
@@ -76,11 +76,31 @@ scale_amount_min = 2.0
 scale_amount_max = 5.0
 color = Color(0.5602599, 0.18797854, 0.08967657, 1)
 
+[node name="next" type="RichTextLabel" parent="." unique_id=655938926]
+offset_left = 76.0
+offset_top = 419.0
+offset_right = 379.0
+offset_bottom = 529.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Up next:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mini" type="RichTextLabel" parent="." unique_id=1754201180]
+offset_left = 368.0
+offset_top = 419.0
+offset_right = 1123.0
+offset_bottom = 529.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Up next:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Level" type="RichTextLabel" parent="." unique_id=2017762373]
 offset_left = 375.0
-offset_top = 295.0
+offset_top = 256.0
 offset_right = 758.0
-offset_bottom = 456.0
+offset_bottom = 417.0
 theme_override_font_sizes/normal_font_size = 80
 text = "Level 0"
 horizontal_alignment = 1

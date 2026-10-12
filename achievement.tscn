@@ -26,12 +26,12 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect" unique_id=1734629618]
 layout_mode = 0
-offset_left = 220.70311
-offset_top = 372.91663
-offset_right = 593.3936
-offset_bottom = 445.91663
+offset_left = 201.66667
+offset_top = 331.6667
+offset_right = 574.3572
+offset_bottom = 404.6667
 scale = Vector2(1.985, 1.985)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 50
 text = "Test test"
 horizontal_alignment = 1

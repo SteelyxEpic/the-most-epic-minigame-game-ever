@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Button.pressed.connect(func():
+		Transtition.trans("title_screen"))
 	if Global.gamemode == "stranded":
 		stranded.show()
 	elif Global.gamemode == "ori":

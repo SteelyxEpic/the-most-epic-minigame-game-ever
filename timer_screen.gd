@@ -83,20 +83,23 @@ func _ready() -> void:
 			return
 		Global.speed += 0.05
 		Global.save()
+		var next = 0
+		if Global.gamemode == "stranded":
+			next = randi_range(5, 10)
+		elif Global.gamemode == "refined":
+			next = randi_range(10, 12)
+			if next == 10:
+				next = 3
+		elif Global.gamemode == "infinity":
+			next = randi_range(1, 12)
+		else:
+			next = randi_range(1, 4)
+		
+		$mini.text = (Global.minigamesinfo[next - 1]["name"])
 		await Timer(5.0 / Global.speed) # using the function created
 		Global.data["achieve"]["minigames_played"] += 1
-		if Global.gamemode == "stranded":
-			Transtition.trans("minigame_" + str(rng.randi_range(5, 10)))
-		elif Global.gamemode == "refined":
-			var num = rng.randi_range(10, 12)
-			if num == 10:
-				Transtition.trans("minigame_3")
-			else:
-				Transtition.trans("minigame_" + str(num))
-		elif Global.gamemode == "infinity":
-			Transtition.trans("minigame_" + str(rng.randi_range(1, 12)))
-		else:
-			Transtition.trans("minigame_" + str(rng.randi_range(1, 4))) # changes your scene by arranging this frankenstein path.
+		Global.data["coins"] += 1
+		Transtition.trans("minigame_" + str(next))
 
 
 func shake(lives: TextureRect):

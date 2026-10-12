@@ -44,3 +44,13 @@ scale = Vector2(0.46327418, 0.4667767)
 [node name="Player" parent="." unique_id=247724331 instance=ExtResource("8_xpvfh")]
 position = Vector2(191, 371.99997)
 scale = Vector2(0.24, 0.297)
+
+[node name="remainder" type="RichTextLabel" parent="." unique_id=1007614714]
+z_index = 2000
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 440.0
+offset_bottom = 114.0
+theme_override_font_sizes/normal_font_size = 60
+text = "1 remaining
+"

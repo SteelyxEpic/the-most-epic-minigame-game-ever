@@ -13,7 +13,9 @@ var current_tween: Tween
 var play_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Music.add_to_button(self)
+	#Music.add_to_button(self)
+	$Button4.pressed.connect(func():
+		Transtition.trans("tutorials"))
 	achieveanim.play("thorpy")
 	if Global.data["achieve"]["minigames_played"] >= 20 and Global.data["Gamemodes"].find(4) == -1:
 		Global.data["Gamemodes"].append(4)
@@ -28,10 +30,10 @@ func _ready() -> void:
 
 func delete():
 	Global.override()
-	for i in buttoncontainer.get_children():
-		i.text = "Please reload the game"
+	get_tree().reload_current_scene()
 func _on_button_3_pressed() -> void:
 	Global.speed = 1
+	Global.test = false
 	Global.lives = 5
 	Global.minigames_done = 0
 	for i in buttoncontainer.get_children():

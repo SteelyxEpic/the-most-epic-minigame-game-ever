@@ -5,12 +5,11 @@ extends Node2D
 @onready var player: CharacterBody2D = $"../Player" # grabs the parent node
 @onready var self_area = $Area2D
 @onready var player_area = $"../Player/Area2D"
+var main:Node2D
 
-# make a signal
-signal Planets_collected
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area == player_area:
-		emit_signal("Planets_collected") #signal broadcast
-		self.hide() #removed from player sight; collected
+		main.emit_signal("collected")
+		queue_free()
 		

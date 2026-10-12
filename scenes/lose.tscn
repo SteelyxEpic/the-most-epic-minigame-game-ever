@@ -68,4 +68,12 @@ scale = Vector2(1.0167547, 0.8585732)
 texture = ExtResource("4_a5bqv")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("4_r44po")]
-position = Vector2(831, 433)
+position = Vector2(873, 404)
+
+[node name="Button" type="Button" parent="." unique_id=1235122286]
+offset_left = 1045.0
+offset_top = 27.0
+offset_right = 1134.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 40
+text = "Skip"

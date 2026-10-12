@@ -15,15 +15,14 @@ shader = ExtResource("3_ypkwt")
 script = ExtResource("1_45wb0")
 
 [node name="Coolbg4" type="Sprite2D" parent="." unique_id=1848505804]
-position = Vector2(338, 433)
+position = Vector2(557, 367)
 scale = Vector2(1.8080357, 2.0673077)
 texture = ExtResource("2_45wb0")
 
 [node name="Light" type="Sprite2D" parent="." unique_id=746329521]
-visible = false
 z_index = 200
 material = SubResource("ShaderMaterial_4kxuq")
-position = Vector2(857, 395)
+position = Vector2(906, 434)
 texture = ExtResource("4_45wb0")
 script = ExtResource("5_v2i0o")
 
@@ -34,10 +33,10 @@ copy_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="BackBufferCopy" unique_id=815816763]
 modulate = Color(0.043137256, 0.043137256, 0.043137256, 1)
-offset_left = -1149.0
-offset_top = -496.0
-offset_right = 556.0
-offset_bottom = 543.0
+offset_left = -1884.0
+offset_top = -1207.0
+offset_right = 1139.0
+offset_bottom = 1351.0
 texture = ExtResource("1_i7jw7")
 
 [node name="Time" parent="." unique_id=463451459 instance=ExtResource("6_ypkwt")]

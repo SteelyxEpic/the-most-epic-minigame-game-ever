@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxswbqbwpdta3" path="res://button4.png" id="3_jlkes"]
 [ext_resource type="Script" uid="uid://bbyjddu78amnt" path="res://scenes/button4.gd" id="4_88pdw"]
 [ext_resource type="Texture2D" uid="uid://cug4fkj4ngxb7" path="res://arrow.png" id="4_jlkes"]
+[ext_resource type="Texture2D" uid="uid://jsokdh6x1bfk" path="res://button4pressed.png" id="6_kd6k2"]
 [ext_resource type="AudioStream" uid="uid://2a5xkdxslp1m" path="res://beep.mp3" id="7_88pdw"]
 
 [node name="minigame_4" type="Node2D" unique_id=1732225971]
@@ -21,7 +22,7 @@ position = Vector2(950.99994, 1.9073486e-06)
 scale = Vector2(0.755, 0.755)
 
 [node name="Arrow" type="Sprite2D" parent="." unique_id=90294614]
-position = Vector2(675, 350)
+position = Vector2(675.99994, 350)
 rotation = 3.1415927
 scale = Vector2(0.575, 0.575)
 texture = ExtResource("4_jlkes")
@@ -37,24 +38,28 @@ scale = Vector2(1.6, 1.6)
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("3_jlkes")
+texture_pressed = ExtResource("6_kd6k2")
 script = ExtResource("4_88pdw")
 
 [node name="2" type="TextureButton" parent="Buttons" unique_id=78740350]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("3_jlkes")
+texture_pressed = ExtResource("6_kd6k2")
 script = ExtResource("4_88pdw")
 
 [node name="3" type="TextureButton" parent="Buttons" unique_id=803255511]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("3_jlkes")
+texture_pressed = ExtResource("6_kd6k2")
 script = ExtResource("4_88pdw")
 
 [node name="4" type="TextureButton" parent="Buttons" unique_id=339896209]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("3_jlkes")
+texture_pressed = ExtResource("6_kd6k2")
 script = ExtResource("4_88pdw")
 
 [node name="ping" type="AudioStreamPlayer2D" parent="." unique_id=1460932348]
