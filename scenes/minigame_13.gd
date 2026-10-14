@@ -10,26 +10,38 @@ var current = [1, 1, 1]
 func _ready() -> void:
 	$TextureButton.pressed.connect(func():
 		current[0] += 1
+		if current[0] == 4:
+			current[0] = 1
 		alienempty.find_child("alieneye").texture = load("res://minigame13/alieneye" + str(current[0]) +  ".png")
 		check())
 	$TextureButton4.pressed.connect(func():
 		current[0] -= 1
+		if current[0] == 0:
+			current[0] = 3
 		alienempty.find_child("alieneye").texture = load("res://minigame13/alieneye" + str(current[0]) +  ".png")
 		check())
 	$TextureButton3.pressed.connect(func():
 		current[1] += 1
+		if current[1] == 4:
+			current[1] = 1
 		alienempty.find_child("alienmouth").texture = load("res://minigame13/alienmouth" + str(current[1]) +  ".png")
 		check())
 	$TextureButton6.pressed.connect(func():
 		current[1] -= 1
+		if current[1] == 0:
+			current[1] = 3
 		alienempty.find_child("alienmouth").texture = load("res://minigame13/alienmouth" + str(current[1]) +  ".png")
 		check())
 	$TextureButton2.pressed.connect(func():
 		current[2] += 1
+		if current[2] == 4:
+			current[2] = 1
 		alienempty.find_child("aliennose").texture = load("res://minigame13/aliennose" + str(current[2]) +  ".png")
 		check())
 	$TextureButton5.pressed.connect(func():
 		current[2] -= 1
+		if current[2] == 0:
+			current[2] = 3
 		alienempty.find_child("aliennose").texture = load("res://minigame13/aliennose" + str(current[2]) +  ".png")
 		check())
 	while Transtition.transtitioning:

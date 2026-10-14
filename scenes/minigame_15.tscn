@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2th246a4xu0s"]
+
+[ext_resource type="Texture2D" uid="uid://bxfh0cidp77vd" path="res://alienbg2.png" id="1_amonr"]
+[ext_resource type="Script" uid="uid://dsmafosdqqiot" path="res://scenes/minigame_15.gd" id="1_qv4yg"]
+[ext_resource type="PackedScene" uid="uid://2557ooorteev" path="res://ship.tscn" id="5_5y5te"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="5_rb375"]
+
+[node name="minigame_15" type="Node2D" unique_id=496041394]
+script = ExtResource("1_qv4yg")
+
+[node name="Alienbg2" type="Sprite2D" parent="." unique_id=1671014841]
+position = Vector2(616, 293)
+scale = Vector2(1.3501664, 1.5992916)
+texture = ExtResource("1_amonr")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_rb375")]
+z_index = 1000
+position = Vector2(961.00006, 1.0000019)
+scale = Vector2(0.655, 0.655)
+
+[node name="Ship" parent="." unique_id=247724331 instance=ExtResource("5_5y5te")]
+position = Vector2(498, 389)

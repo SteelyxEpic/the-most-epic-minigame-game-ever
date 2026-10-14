@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bg6ylm4105as1"]
+
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="1_sdhqn"]
+[ext_resource type="Texture2D" uid="uid://ca3fo06p8xxao" path="res://minigame14/back.png" id="1_yv78h"]
+[ext_resource type="Script" uid="uid://brk0t65wg77fk" path="res://scenes/minigame_14.gd" id="1_yxjen"]
+
+[node name="minigame_14" type="Node2D" unique_id=251118521]
+script = ExtResource("1_yxjen")
+
+[node name="Back" type="Sprite2D" parent="." unique_id=372906699]
+position = Vector2(552, 312.50003)
+scale = Vector2(1.9484242, 1.9458824)
+texture = ExtResource("1_yv78h")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("1_sdhqn")]
+z_index = 1000
+position = Vector2(961.00006, 1.0000019)
+scale = Vector2(0.655, 0.655)
+
+[node name="left" type="VBoxContainer" parent="." unique_id=932078464]
+offset_left = 50.999996
+offset_top = 153.0
+offset_right = 272.0
+offset_bottom = 804.61285
+scale = Vector2(0.775, 0.775)
+theme_override_constants/separation = 40
+
+[node name="right" type="VBoxContainer" parent="." unique_id=791611886]
+offset_left = 1018.0
+offset_top = 157.0
+offset_right = 1239.0
+offset_bottom = 808.61285
+scale = Vector2(0.775, 0.775)
+theme_override_constants/separation = 40

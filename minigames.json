@@ -60,8 +60,18 @@
 	"how_to_play": "Charge your hammer and release at the correct power level."
   },
   {
-	"name": "Distress disguise!",
+	"name": "Distress Disguise!",
 	"description": "The aliens are after you! Quick! Make a disguise now!",
 	"how_to_play": "Change the visual of the alien to match the alien in the box on the top left."
+  },
+  {
+	"name": "Wires Galore!",	
+	"description": "Oh no, the wires got disconnected! Quick! Fix them now!",
+	"how_to_play": "Match the wire nodes on the left to the ones on the right with the same color."
+  },
+  {
+	"name": "Weave It Out!",
+	"description": "The aliens spotted you! Hurry! Dodge their attacks!",
+	"how_to_play": "Move your character to a safe zone before time runs out."
   }
 ]

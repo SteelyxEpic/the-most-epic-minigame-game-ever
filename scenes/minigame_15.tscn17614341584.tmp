@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d2th246a4xu0s"]
+
+[ext_resource type="Texture2D" uid="uid://bxfh0cidp77vd" path="res://alienbg2.png" id="1_amonr"]
+[ext_resource type="Script" uid="uid://dsmafosdqqiot" path="res://scenes/minigame_15.gd" id="1_qv4yg"]
+[ext_resource type="Texture2D" uid="uid://vp4tg6uo3d7r" path="res://minigame15/lazer.png" id="3_wr4d5"]
+[ext_resource type="Script" uid="uid://c2rcp6wsqpkgt" path="res://scenes/lazer.gd" id="4_wr4d5"]
+[ext_resource type="PackedScene" uid="uid://bmhflcrcuh5v3" path="res://Time.tscn" id="5_rb375"]
+
+[node name="minigame_15" type="Node2D" unique_id=496041394]
+script = ExtResource("1_qv4yg")
+
+[node name="Alienbg2" type="Sprite2D" parent="." unique_id=1671014841]
+position = Vector2(616, 293)
+scale = Vector2(1.3501664, 1.5992916)
+texture = ExtResource("1_amonr")
+
+[node name="Lazer" type="Sprite2D" parent="." unique_id=685111449]
+position = Vector2(986, 273)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_wr4d5")
+offset = Vector2(-180, 29)
+script = ExtResource("4_wr4d5")
+
+[node name="Lazer2" type="Sprite2D" parent="." unique_id=972655317]
+position = Vector2(525, 395)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_wr4d5")
+offset = Vector2(-180, 29)
+script = ExtResource("4_wr4d5")
+
+[node name="Lazer3" type="Sprite2D" parent="." unique_id=1632936612]
+position = Vector2(363, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_wr4d5")
+offset = Vector2(-180, 29)
+script = ExtResource("4_wr4d5")
+
+[node name="Lazer4" type="Sprite2D" parent="." unique_id=1022971011]
+position = Vector2(820, 504)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_wr4d5")
+offset = Vector2(-180, 29)
+script = ExtResource("4_wr4d5")
+
+[node name="Lazer5" type="Sprite2D" parent="." unique_id=1664453896]
+position = Vector2(227, 288)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_wr4d5")
+offset = Vector2(-180, 29)
+script = ExtResource("4_wr4d5")
+
+[node name="Time" parent="." unique_id=463451459 instance=ExtResource("5_rb375")]
+z_index = 1000
+position = Vector2(961.00006, 1.0000019)
+scale = Vector2(0.655, 0.655)

@@ -27,8 +27,8 @@ emission_rect_extents = Vector2(13.89, 117.675)
 gravity = Vector2(-400, 0)
 color = Color(1, 0.627451, 0.039215688, 1)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1796203705]
+[node name="ship" type="Area2D" parent="." unique_id=1796203705]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=867503240]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ship" unique_id=867503240]
 scale = Vector2(42.847008, 12.930998)
 shape = SubResource("CircleShape2D_4kxuq")

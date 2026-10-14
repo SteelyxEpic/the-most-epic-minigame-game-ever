@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dt84gde7fbnsy" path="res://minigame13/alieneye1.png" id="7_i2c83"]
 [ext_resource type="Texture2D" uid="uid://bpan76n4fvwke" path="res://minigame13/alienmouth1.png" id="8_1nqe6"]
 [ext_resource type="Texture2D" uid="uid://c5uqgantq26nd" path="res://minigame13/arrow.png" id="8_f6bbu"]
+[ext_resource type="Texture2D" uid="uid://dkldoso40kijd" path="res://minigame13/arrowhover.png" id="10_i2c83"]
 
 [node name="minigame_13" type="Node2D" unique_id=970532914]
 script = ExtResource("1_1wew1")
@@ -87,6 +88,7 @@ offset_right = 1192.0
 offset_bottom = 547.0
 scale = Vector2(0.47560975, 0.43457943)
 texture_normal = ExtResource("8_f6bbu")
+texture_hover = ExtResource("10_i2c83")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=989456753]
 offset_left = 908.0
@@ -95,6 +97,7 @@ offset_right = 1199.0
 offset_bottom = 648.0
 scale = Vector2(0.47560975, 0.43457943)
 texture_normal = ExtResource("8_f6bbu")
+texture_hover = ExtResource("10_i2c83")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=769036592]
 offset_left = 912.0
@@ -103,6 +106,7 @@ offset_right = 1203.0
 offset_bottom = 752.0
 scale = Vector2(0.47560975, 0.43457943)
 texture_normal = ExtResource("8_f6bbu")
+texture_hover = ExtResource("10_i2c83")
 
 [node name="TextureButton4" type="TextureButton" parent="." unique_id=1499462953]
 offset_left = 311.516
@@ -111,6 +115,7 @@ offset_right = 602.516
 offset_bottom = 536.0
 scale = Vector2(-0.476, 0.435)
 texture_normal = ExtResource("8_f6bbu")
+texture_hover = ExtResource("10_i2c83")
 
 [node name="TextureButton5" type="TextureButton" parent="." unique_id=983604029]
 offset_left = 318.516
@@ -119,6 +124,7 @@ offset_right = 609.516
 offset_bottom = 637.0
 scale = Vector2(-0.476, 0.435)
 texture_normal = ExtResource("8_f6bbu")
+texture_hover = ExtResource("10_i2c83")
 
 [node name="TextureButton6" type="TextureButton" parent="." unique_id=639319713]
 offset_left = 322.516
@@ -127,3 +133,4 @@ offset_right = 613.516
 offset_bottom = 743.0
 scale = Vector2(-0.476, 0.435)
 texture_normal = ExtResource("8_f6bbu")
+texture_hover = ExtResource("10_i2c83")
