@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cux42t6kyeo41"]
+
+[ext_resource type="Script" uid="uid://q0oyo2qv8eft" path="res://acheivements.gd" id="1_a67p4"]
+[ext_resource type="Texture2D" uid="uid://d0cekl43ic4oi" path="res://notif.png" id="1_icede"]
+
+[node name="Acheivements" type="Node2D" unique_id=1475137185]
+script = ExtResource("1_a67p4")
+
+[node name="Notif" type="Sprite2D" parent="." unique_id=2040736440]
+top_level = true
+z_index = 4096
+position = Vector2(1408.0001, 120)
+scale = Vector2(0.46679688, 0.4453125)
+texture = ExtResource("1_icede")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Notif" unique_id=580674864]
+offset_left = -381.3225
+offset_top = -125.754395
+offset_right = 364.18384
+offset_bottom = 143.7193
+theme_override_colors/default_color = Color(0.24985075, 0.24985075, 0.24985075, 1)
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]New Difficulty Unlocked![/b]"
+horizontal_alignment = 1
+vertical_alignment = 1

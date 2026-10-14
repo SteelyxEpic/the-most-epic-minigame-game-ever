@@ -4,12 +4,17 @@ var tween: Tween
 var transtitioning: bool
 
 func trans(scene: String):
+	if tween:
+		tween.kill()
+	position.x = 0
 	transtitioning = true
 	tween = create_tween()
 	tween.tween_property(self, "position:x", -1550, 1/Global.speed)
 	await get_tree().create_timer(1/Global.speed).timeout
 	if scene == "level_scene" and Global.test:
 		scene = "tutorials"
+	if scene == "title_screen":
+		Acheivements.check()
 	await get_tree().change_scene_to_file("res://scenes/"+ scene + ".tscn")
 	
 	
