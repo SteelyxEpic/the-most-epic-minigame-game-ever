@@ -33,7 +33,13 @@ func summon():
 			asteriod_instance.speed *= randf_range(1.5, 2.5)
 			delay = 1.5
 		else:
-			asteriod_instance.position = Vector2(get_viewport_rect().size.x, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
+			if (Global.difficulty == "Hell" or Global.difficulty == "Hard") and randf() > 0.5:
+				asteriod_instance.speed = -asteriod_instance.speed
+				asteriod_instance.position = Vector2(0, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
+				asteriod_instance.rotation_degrees = 180
+				
+			else:
+				asteriod_instance.position = Vector2(get_viewport_rect().size.x, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
 		asteriod_instance.get_child(0).get_child(1).area_entered.connect(shape_entered)
 		
 		await wait(delay/Global.speed)

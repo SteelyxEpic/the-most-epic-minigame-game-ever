@@ -6,12 +6,17 @@ extends Node2D
 var hovering: bool = false
 var order = []
 var index: int = 0
+var presses:Vector2
+var pressneeded:int = 1
 
 
 var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
-	
+	if Global.difficulty == "Hell":
+		pressneeded = 3
+	elif Global.difficulty == "Hard":
+		pressneeded = 2
 	while Transtition.transtitioning:
 		await get_tree().process_frame
 	Global.minigame4.connect(click)
@@ -45,20 +50,26 @@ func hoverleft():
 	hovering = true
 
 func click(num: int):
-	sound.play()
-	print(num)
-	if order[index] == num:
-		index += 1
-		if index == len(order):
-			for i in buttons.get_children():
-				i.disabled = true
-			
-			Transtition.trans("level_scene")
+	if not presses.x == num:
+		presses = Vector2(num, 1)
 	else:
-		Global.lost = true
-		Global.minigames_done -= 1 #go back a minigame
-		Global.lives -= 1 # lose ur lives
-		Transtition.trans("level_scene")
+		presses.y += 1
+	if presses.y == pressneeded:
+		presses.y = 0
+		sound.play()
+		print(num)
+		if order[index] == num:
+			index += 1
+			if index == len(order):
+				for i in buttons.get_children():
+					i.disabled = true
+				
+				Transtition.trans("level_scene")
+		else:
+			Global.lost = true
+			Global.minigames_done -= 1 #go back a minigame
+			Global.lives -= 1 # lose ur lives
+			Transtition.trans("level_scene")
 		
 
 func wait(seconds: float) -> void: # write this simple function out for wait!

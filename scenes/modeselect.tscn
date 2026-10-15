@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ckvogtiur3lmb" path="res://scenes/modeselect.gd" id="1_t2xyu"]
 [ext_resource type="Script" uid="uid://dsun0wnk1t536" path="res://scenes/background.gd" id="2_t2xyu"]
 [ext_resource type="Texture2D" uid="uid://cug4fkj4ngxb7" path="res://arrow.png" id="4_8edr3"]
+[ext_resource type="Texture2D" uid="uid://bhau1ar3bomdc" path="res://mode.png" id="4_efpdb"]
 
 [sub_resource type="Animation" id="Animation_efpdb"]
 length = 0.001
@@ -83,25 +84,31 @@ pivot_offset = Vector2(655, 398)
 texture = ExtResource("1_1cd6n")
 script = ExtResource("2_t2xyu")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background" unique_id=2051177960]
-z_index = 1
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 207.0
-theme_override_constants/outline_size = 28
-theme_override_font_sizes/normal_font_size = 120
-text = "Choose Mode"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Node2D" type="Node2D" parent="Background" unique_id=487914318]
+
+[node name="Mode" type="Sprite2D" parent="Background/Node2D" unique_id=393665462]
+position = Vector2(590, 114)
+scale = Vector2(0.8542024, 0.8333333)
+texture = ExtResource("4_efpdb")
+
+[node name="TextureRect" type="TextureRect" parent="Background/Node2D" unique_id=1352419712]
+top_level = true
+z_index = 100
+offset_left = -45.0
+offset_top = -51.0
+offset_right = 1195.0
+offset_bottom = 694.0
+mouse_filter = 2
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1003066579]
 offset_left = 333.0
-offset_top = 279.0
+offset_top = 203.0
 offset_right = 857.0
-offset_bottom = 358.0
+offset_bottom = 282.0
 theme_override_font_sizes/font_size = 50
+alignment = 1
 selected = 0
-item_count = 4
+item_count = 5
 popup/item_0/text = "Prologue"
 popup/item_0/id = 1
 popup/item_0/disabled = true
@@ -111,9 +118,12 @@ popup/item_1/disabled = true
 popup/item_2/text = "Refined"
 popup/item_2/id = 3
 popup/item_2/disabled = true
-popup/item_3/text = "Infinity"
+popup/item_3/text = "Hide Out"
 popup/item_3/id = 4
 popup/item_3/disabled = true
+popup/item_4/text = "Infinity"
+popup/item_4/id = 5
+popup/item_4/disabled = true
 
 [node name="Arrow" type="Sprite2D" parent="OptionButton" unique_id=1189931321]
 position = Vector2(-43.99997, 43)
@@ -130,6 +140,22 @@ texture = ExtResource("4_8edr3")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="OptionButton" unique_id=1648415675]
 libraries/ = SubResource("AnimationLibrary_5pqyq")
 
+[node name="OptionButton2" type="OptionButton" parent="." unique_id=1925721793]
+offset_left = 410.0
+offset_top = 335.0
+offset_right = 771.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 50
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Normal"
+popup/item_0/id = 0
+popup/item_1/text = "Hard"
+popup/item_1/id = 1
+popup/item_2/text = "Hell"
+popup/item_2/id = 2
+
 [node name="Button3" type="Button" parent="." unique_id=1269412452]
 offset_left = 456.0
 offset_top = 439.0
@@ -139,4 +165,5 @@ theme_override_font_sizes/font_size = 60
 text = "Ready!"
 
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="OptionButton2" to="." method="_on_option_button_2_item_selected"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

@@ -3,6 +3,7 @@ extends Node2D
 @onready var lazer: PackedScene = load("res://minigame15/lazer.tscn")
 
 signal fire
+signal aim
 
 func _ready() -> void:
 	while Transtition.transtitioning:
@@ -14,8 +15,9 @@ func _ready() -> void:
 		instance.main = self
 		add_child(instance)
 		instance.position = Vector2(randf_range(0, get_viewport_rect().size.x/10)*10, randf_range(0, get_viewport_rect().size.y/10)*10)
-		instance.look_at($Ship.position)
-		instance.rotation_degrees += 180
+		instance.target = $Ship
+	await themed_timer.Timer(2.0 / Global.speed) #accessing a function from this node
+	emit_signal("aim")
 	await themed_timer.Timer(3.0 / Global.speed) #accessing a function from this node
 	emit_signal("fire")
 	await themed_timer.Timer(1.0 / Global.speed) #accessing a function from this node

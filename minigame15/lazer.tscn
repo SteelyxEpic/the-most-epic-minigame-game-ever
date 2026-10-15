@@ -13,6 +13,7 @@ offset = Vector2(-180, 29)
 script = ExtResource("2_o0out")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=236482964]
+visible = false
 modulate = Color(1, 1, 1, 0.30588236)
 show_behind_parent = true
 points = PackedVector2Array(0, 0, -20000, 0)

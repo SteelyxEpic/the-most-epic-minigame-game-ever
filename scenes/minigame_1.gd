@@ -11,10 +11,9 @@ var garlic_collected = 0 # just keeping track of garlic collected
 var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
-	while Transtition.transtitioning:
-		await get_tree().process_frame
 	collected.connect(_on_planets_collected)
 	needed = randi_range(3, 3 + Global.minigames_done/2)
+	needed = round(needed * (2 if Global.difficulty == "Hell" else (1.5 if Global.difficulty == "Hard" else 1)))
 	$remainder.text = str(needed) + " remaining"
 	for i in range(needed):
 		var instance = planets.instantiate()
@@ -22,6 +21,8 @@ func _ready() -> void:
 		instance.main = self
 		add_child(instance)
 		instance.position = Vector2(randf_range(0, get_viewport_rect().size.x/6.3)*4, randf_range(0, get_viewport_rect().size.y/6.3)*4)
+	while Transtition.transtitioning:
+		await get_tree().process_frame
 	await themed_timer.Timer(10.0 / Global.speed) #accessing a function from this node
 	if !Transtition.transtitioning:
 		Global.lost = true

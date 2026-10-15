@@ -7,7 +7,10 @@ var minigames_doing = 10
 var speed = 1.0
 var gamemode = "ori"
 var save_location = "user://save.json"
-var default: Dictionary = {"Gamemodes": [1],"coins":int(0),"Settings":{"SFX": 1, "Music": 1, "Rounds": 10}, "achieve":{ "minigames_played": int(0), "aliens_tapped": int(0), "planets_collected": int(0), "asteriods_collided": int(0), "fuel_refueled": int(0), "levers_flicked": int(0), "lights_turned_on": int(0), "Earths_found": int(0)}}
+var default: Dictionary = {"Gamemodes": [1],"Difficulty": ["Normal"],"coins":int(0),"Settings":{"SFX": 1, "Music": 1, "Rounds": 10}, "achieve":{ "minigames_played": int(0), "aliens_tapped": int(0), "planets_collected": int(0), "asteriods_collided": int(0), "fuel_refueled": int(0), "levers_flicked": int(0), "lights_turned_on": int(0), "Earths_found": int(0)}}
+var difficulty: String = "Normal"
+var backgrounds: Dictionary = {"ori": load("res://epicbg3.png") as Texture2D, "stranded": load("res://coolbg4.png") as Texture2D, "refined": load("res://awesomebg2.png") as Texture2D, "hideout": load("res://alienbg2.png") as Texture2D, "infinity": load("res://infbg.png") as Texture2D}
+var levels: Dictionary = {"ori": Vector2(1, 4), "stranded": Vector2(5, 10), "refined": Vector2(11, 12), "hideout": Vector2(13, 15)}
 var data: Dictionary
 var minigamesinfo
 var test = false

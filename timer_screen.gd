@@ -1,18 +1,11 @@
 extends Node2D
 @onready var Lives_container: HBoxContainer = $Lives
-@onready var life: TextureRect = $Lives/life1
-@onready var life_2: TextureRect = $Lives/life2
-@onready var life_3: TextureRect = $Lives/life3
-@onready var life_4: TextureRect = $Lives/life4
-@onready var life_5: TextureRect = $Lives/life5
+@onready var lives: HBoxContainer = $Lives
 @onready var level: RichTextLabel = $Level
 @onready var camera:Camera2D = $Camera2D
 @onready var crack:AudioStreamPlayer2D = $crack
 @onready var particles:CPUParticles2D = $CPUParticles2D
 @onready var broken:Texture2D = load("res://broken.png") as Texture2D
-@onready var cool:Texture2D = load("res://coolbg4.png") as Texture2D
-@onready var awesome:Texture2D = load("res://awesomebg2.png") as Texture2D
-@onready var inf: Texture2D = load("res://infbg.png") as Texture2D
 @onready var bg: TextureRect = $bg
 @onready var coin: Node2D = $coin
 @onready var slide: TextureRect = $slide
@@ -23,59 +16,15 @@ var time
 func _ready() -> void:
 	Global.save()
 	coin.get_node("RichTextLabel").text = "x"+str(Global.data["coins"])
-	if Global.gamemode == "stranded":
-		bg.texture = cool
-	elif Global.gamemode == "refined":
-		bg.texture = awesome
-	elif Global.gamemode == "infinity":
-		bg.texture = inf
+	bg.texture = Global.backgrounds[Global.gamemode]
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	await get_tree().process_frame
-	match Global.lives: # asks or checks if lives is equal to one of 
-#these values, cool hack. by the way this is a horrid way to illustrate the 
-#lives visually so later you can always find alternative code. Now, dw abt it.
-
-		4:
-			if Global.lost:
-				await shake(life)
-			else:
-				life.texture = broken
-		3:
-			life.texture = broken
-			if Global.lost:
-				await shake(life_2)
-			else:
-				life_2.texture = broken
-		2:
-			life.texture = broken
-			life_2.texture = broken
-			if Global.lost:
-				await shake(life_3)
-			else:
-				life_3.texture = broken
-		1:
-			life.texture = broken
-			life_2.texture = broken
-			life_3.texture = broken
-			if Global.lost:
-				await shake(life_4)
-			else:
-				life_4.texture = broken
-		0:
-			life.texture = broken
-			life_2.texture = broken
-			life_3.texture = broken
-			life_4.texture = broken
-			if Global.lost:
-				await shake(life_5)
-				
-			else:
-				life_5.texture = broken
-	
-	 # make ths text reflect the value of the time variable. this makes names easier. the str() converts the int to a String
-	level.text = "Level " + str(Global.minigames_done + 1) # this tells you want minigame you're on using concatenation (google the word yo)
-	
+	level.text = "Level " + str(Global.minigames_done + 1) 
+	for i in range(4 - Global.lives if Global.lost else 5 - Global.lives):
+		lives.get_child(i).texture = broken
+	if Global.lost:
+		await shake(lives.get_child(4 - Global.lives))
 	if Global.lives > 0:
 		Global.minigames_done = Global.minigames_done + 1
 		if Global.minigames_done > Global.minigames_doing and Global.gamemode != "infinity":
@@ -84,16 +33,11 @@ func _ready() -> void:
 		Global.speed += 0.05
 		Global.save()
 		var next = 0
-		if Global.gamemode == "stranded":
-			next = randi_range(5, 10)
-		elif Global.gamemode == "refined":
-			next = randi_range(10, 12)
-			if next == 10:
-				next = 3
-		elif Global.gamemode == "infinity":
-			next = randi_range(1, 12)
+		if Global.gamemode == "infinity":
+			next = randi_range(1, 15)
 		else:
-			next = randi_range(1, 4)
+			var range: Vector2 = Global.levels[Global.gamemode]
+			next = randi_range(range.x, range.y)
 		
 		$mini.text = (Global.minigamesinfo[next - 1]["name"])
 		await Timer(5.0 / Global.speed) # using the function created

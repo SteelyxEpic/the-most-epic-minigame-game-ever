@@ -17,8 +17,10 @@ func _ready() -> void:
 	$Button4.pressed.connect(func():
 		Transtition.trans("tutorials"))
 	achieveanim.play("thorpy")
-	if Global.data["achieve"]["minigames_played"] >= 20 and Global.data["Gamemodes"].find(4) == -1:
-		Global.data["Gamemodes"].append(4)
+	if Global.data["achieve"]["minigames_played"] >= 20 and Global.data["Gamemodes"].find(5) == -1:
+		Global.data["Gamemodes"].append(5) #infinity gamemode
+	if Global.data["achieve"]["aliens_tapped"] >= 50 and Global.data["Gamemodes"].find(4) == -1:
+		Global.data["Gamemodes"].append(4) #alien gamemode
 	achieve.pressed.connect(func():
 		Transtition.trans("achievements"))
 	achieve.mouse_entered.connect(func():

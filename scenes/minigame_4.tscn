@@ -68,6 +68,9 @@ stream = ExtResource("7_88pdw")
 volume_db = -13.648
 bus = &"SFX"
 
+[node name="Timer" type="Timer" parent="." unique_id=1945907503]
+wait_time = 0.2
+
 [connection signal="mouse_entered" from="Buttons/1" to="." method="hover"]
 [connection signal="mouse_exited" from="Buttons/1" to="." method="hoverleft"]
 [connection signal="mouse_entered" from="Buttons/2" to="." method="hover"]

@@ -7,6 +7,7 @@
 script = ExtResource("1_a67p4")
 
 [node name="Notif" type="Sprite2D" parent="." unique_id=2040736440]
+visible = false
 top_level = true
 z_index = 4096
 position = Vector2(1408.0001, 120)

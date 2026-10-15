@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 			$Plane.scale.x = sign(velocity.x)
 			$Plane/CPUParticles2D.gravity = Vector2(-400, 0) * sign(velocity.x)
 		if velocity.y != 0:
-			$Plane.rotation_degrees = sign(velocity.y) * 10
+			$Plane.rotation_degrees = sign(velocity.y) * 10 * $Plane.scale.x
 		else:
 			$Plane.rotation_degrees = 0
 	else:

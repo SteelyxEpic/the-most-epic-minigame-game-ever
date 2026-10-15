@@ -3,10 +3,8 @@ extends Node2D
 @onready var arrowanim: AnimationPlayer = $OptionButton/AnimationPlayer
 @onready var option: OptionButton = $OptionButton
 @onready var button: Button = $Button3
-@onready var ori: Texture2D = load("res://epicbg.png")
-@onready var stranded: Texture2D = load("res://coolbg.png")
-@onready var refine: Texture2D = load("res://awesomebg.png")
-@onready var inf: Texture2D = load("res://infbg.png")
+var backgrounds: Dictionary = {"ori": load("res://epicbg.png") as Texture2D, "stranded": load("res://coolbg.png") as Texture2D, "refined": load("res://awesomebg.png") as Texture2D, "hideout": load("res://alienbg.png") as Texture2D, "infinity": load("res://infbg.png") as Texture2D}
+var diffbackgrounds: Dictionary = {"Normal": null, "Hard": load("res://hard.png") as Texture2D, "Hell": load("res://hell.png") as Texture2D}
 @onready var bg: TextureRect = $Background
 
 # Called when the node enters the scene tree for the first time.
@@ -17,10 +15,6 @@ func _ready() -> void:
 		option.set_item_disabled(i - 1, false)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func _on_button_3_pressed() -> void:
 	option.disabled = true
@@ -29,15 +23,10 @@ func _on_button_3_pressed() -> void:
 
 
 func _on_option_button_item_selected(index: int) -> void:
-	if index == 0:
-		bg.texture = ori 
-		Global.gamemode = "ori"
-	elif index == 1:
-		bg.texture = stranded 
-		Global.gamemode = "stranded"
-	elif index == 2:
-		bg.texture = refine 
-		Global.gamemode = "refined"
-	elif index == 3:
-		bg.texture = inf 
-		Global.gamemode = "infinity"
+	Global.gamemode = backgrounds.keys()[index]
+	bg.texture = backgrounds[Global.gamemode] 
+
+
+func _on_option_button_2_item_selected(index: int) -> void:
+	Global.difficulty = diffbackgrounds.keys()[index]
+	$Background/Node2D/TextureRect.texture = diffbackgrounds[Global.difficulty] 
