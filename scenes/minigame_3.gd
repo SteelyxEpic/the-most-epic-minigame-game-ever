@@ -13,7 +13,7 @@ func _ready() -> void:
 	while Transtition.transtitioning:
 		await get_tree().process_frame
 	summon()
-	await time.Timer(5.0 * Global.speed)
+	await time.Timer(5.0 * Global.speed * (1.5 if Global.difficulty == "Hard" else (2 if Global.difficulty == "Hell" else 1)))
 	#after this is completed...
 	timer_end = true 
 	
@@ -28,21 +28,27 @@ func summon():
 		asteriod_instance.speed = 500 * Global.speed
 		add_child(asteriod_instance)
 		if minigameseven:
-			asteriod_instance.rotation_degrees = -90
-			asteriod_instance.position = Vector2(rng.randf_range(0, get_viewport_rect().size.x/5) * 5, 0)
+			if (Global.difficulty == "Hell" or Global.difficulty == "Hard") and randf() > 0.5:
+				if randf() > 0.5:
+					asteriod_instance.scale.x *= -1
+					asteriod_instance.position = Vector2(0, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
+				else:
+					asteriod_instance.position = Vector2(get_viewport_rect().size.x, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
+				
+			else:
+				asteriod_instance.rotation_degrees = -90
+				asteriod_instance.position = Vector2(rng.randf_range(0, get_viewport_rect().size.x/5) * 5, 0)
 			asteriod_instance.speed *= randf_range(1.5, 2.5)
 			delay = 1.5
 		else:
 			if (Global.difficulty == "Hell" or Global.difficulty == "Hard") and randf() > 0.5:
-				asteriod_instance.speed = -asteriod_instance.speed
 				asteriod_instance.position = Vector2(0, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
-				asteriod_instance.rotation_degrees = 180
-				
+				asteriod_instance.scale.x *= -1
 			else:
 				asteriod_instance.position = Vector2(get_viewport_rect().size.x, rng.randf_range(0, get_viewport_rect().size.y/5) * 5)
 		asteriod_instance.get_child(0).get_child(1).area_entered.connect(shape_entered)
 		
-		await wait(delay/Global.speed)
+		await wait((delay/Global.speed)/2 if Global.difficulty == "Hard" else (3 if Global.difficulty == "Hell" else 1))
 	
 	
 func wait(seconds: float) -> void: # write this simple function out for wait!

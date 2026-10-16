@@ -14,7 +14,11 @@ func trans(scene: String):
 	if scene == "level_scene" and Global.test:
 		scene = "tutorials"
 	if scene == "title_screen":
-		Acheivements.check()
+		if Global.data["achieve"]["minigames_played"] >= 20 :
+			Global.new(0, 5) #infinity gamemode
+		if Global.data["achieve"]["aliens_tapped"] >= 50:
+			Global.new(0, 4) #alien gamemode
+		Acheivements.appear()
 	await get_tree().change_scene_to_file("res://scenes/"+ scene + ".tscn")
 	
 	

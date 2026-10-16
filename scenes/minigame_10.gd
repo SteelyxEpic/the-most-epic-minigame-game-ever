@@ -19,6 +19,8 @@ func _ready() -> void:
 		lever_instance.index = i
 		lever_instance.name = str(lever_instance)
 		add_child(lever_instance)
+		if Global.difficulty == "Hell" or Global.difficulty == "Hard":
+			lever_instance.button.rotation = lever_instance.rotations * randi_range(0, 1)
 		lever_instance.position = Vector2(randf_range(0, get_viewport_rect().size.x/1.5), randf_range(0, get_viewport_rect().size.y/1.5))
 	Global.minigame5.connect(turnon)
 	await themed_timer.Timer(5.0 / Global.speed) #accessing a function from this node

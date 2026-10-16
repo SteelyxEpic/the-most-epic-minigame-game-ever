@@ -47,3 +47,9 @@ func load_data() -> Dictionary:
 		file.close()
 		return dataf
 	return default
+func new(type, index):
+	if type == 0:
+		if data["Gamemodes"].find(index) == -1:
+			data["Gamemodes"].append(index)
+			Acheivements.alerts.append("New Gamemode " + backgrounds.keys()[index - 1] + " Unlocked!")
+	save()

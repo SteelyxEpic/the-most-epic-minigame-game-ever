@@ -8,7 +8,7 @@ var current = [1, 1, 1]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$TextureButton.pressed.connect(func():
+	$TextureButton1.pressed.connect(func():
 		current[0] += 1
 		if current[0] == 4:
 			current[0] = 1
@@ -44,12 +44,20 @@ func _ready() -> void:
 			current[2] = 3
 		alienempty.find_child("aliennose").texture = load("res://minigame13/aliennose" + str(current[2]) +  ".png")
 		check())
-	while Transtition.transtitioning:
-		await get_tree().process_frame
 	value = [randi_range(1, 3), randi_range(1, 3), randi_range(1, 3)]
 	matching.find_child("alieneye").texture = load("res://minigame13/alieneye" + str(value[0]) +  ".png")
 	matching.find_child("alienmouth").texture = load("res://minigame13/alienmouth" + str(value[1]) +  ".png")
 	matching.find_child("aliennose").texture = load("res://minigame13/aliennose" + str(value[2]) +  ".png")
+	for i in range(6):
+		find_child("TextureButton" + str(i + 1)).hide()
+	while Transtition.transtitioning:
+		await get_tree().process_frame
+	if Global.difficulty == "Hell" or Global.difficulty == "Hard":
+		await themed_timer.Timer(2.0 / Global.speed) #accessing a function from this node
+		$Match.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	
+	for i in range(6):
+		find_child("TextureButton" + str(i + 1)).show()
 	await themed_timer.Timer(10.0 / Global.speed) #accessing a function from this node
 	if !Transtition.transtitioning:
 		Global.lost = true

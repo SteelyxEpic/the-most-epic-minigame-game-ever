@@ -5,6 +5,7 @@ extends Node2D
 # ^^^ You dragged this in the scene by the way 
 
 signal collected
+signal collectedbad
 
 var needed = 3
 var garlic_collected = 0 # just keeping track of garlic collected
@@ -12,6 +13,7 @@ var timer_end = false # boolean (true or false) stating whether the timer ended
 
 func _ready() -> void:
 	collected.connect(_on_planets_collected)
+	collectedbad.connect(_on_planets_collectedbad)
 	needed = randi_range(3, 3 + Global.minigames_done/2)
 	needed = round(needed * (2 if Global.difficulty == "Hell" else (1.5 if Global.difficulty == "Hard" else 1)))
 	$remainder.text = str(needed) + " remaining"
@@ -40,10 +42,20 @@ func _on_planets_collected() -> void:
 	Global.data["achieve"]["planets_collected"] += 1
 	
 	sound.play()
+	sound.pitch_scale += 0.25
 	garlic_collected = garlic_collected +1
 	$remainder.text = str(needed - garlic_collected) + " remaining"
 	if garlic_collected == needed: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
 			themed_timer.cont = false
 			await wait(1/Global.speed)
 			Transtition.trans("level_scene") # go back to the intermission scene
+	return
+
+func _on_planets_collectedbad() -> void:
+	print("collected the bad ones!")
+	var temp = sound.pitch_scale
+	sound.pitch_scale = 0.5
+	sound.play()
+	sound.pitch_scale = temp
+	$Player.SPEED *= 0.75
 	return

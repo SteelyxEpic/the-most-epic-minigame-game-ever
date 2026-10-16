@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 var SPEED = 300.0
-const JUMP_VELOCITY = -750.0
+@export var JUMP_VELOCITY = -750.0
 
 var state = "idle"
 

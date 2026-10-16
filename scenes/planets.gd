@@ -24,7 +24,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if Transtition.transtitioning:
 		position = Vector2(randf_range(0, get_viewport_rect().size.x/6.3)*4, randf_range(0, get_viewport_rect().size.y/6.3)*4)
 	else:
-		if area == player_area and not $Planet.texture == bad:
-			main.emit_signal("collected")
+		if area == player_area:
+			if $Planet.texture == bad:
+				main.emit_signal("collectedbad")
+			else:
+				main.emit_signal("collected")
 			queue_free()
 		

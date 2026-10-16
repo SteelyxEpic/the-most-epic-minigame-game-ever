@@ -9,6 +9,7 @@ var diffbackgrounds: Dictionary = {"Normal": null, "Hard": load("res://hard.png"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.difficulty = "Normal"
 	Global.gamemode = "ori"
 	arrowanim.play("arrows")
 	for i in Global.data["Gamemodes"]:
@@ -17,8 +18,11 @@ func _ready() -> void:
 
 
 func _on_button_3_pressed() -> void:
+	Acheivements.alerts = []
 	option.disabled = true
 	button.disabled = true
+	if Global.difficulty == "Hell":
+		Global.lives = 1
 	Transtition.trans("level_scene")
 
 

@@ -36,7 +36,7 @@ func _ready() -> void:
 		i.disabled = false
 	
 	
-	await themed_timer.Timer(5.0 / Global.speed) #accessing a function from this node
+	await themed_timer.Timer(15.0 / Global.speed) #accessing a function from this node
 	#after this is compeleted...
 	if !Transtition.transtitioning:
 		Global.lost = true

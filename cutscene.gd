@@ -14,11 +14,9 @@ func _ready() -> void:
 		stranded.show()
 	elif Global.gamemode == "ori":
 		if win:
-			if Global.data["Gamemodes"].find(3) == -1:
-				Global.data["Gamemodes"].append(3) #refined gamemode
+			Global.new(0, 3) #refined gamemode
 		else:
-			if Global.data["Gamemodes"].find(2) == -1:
-				Global.data["Gamemodes"].append(2) #stranded gamemode
+			Global.new(0, 2) #stranded gamemode
 	elif Global.gamemode == "refined":
 		stranded.show()
 		if win:

@@ -81,7 +81,7 @@ z_index = 1000
 position = Vector2(964.00006, 13.999992)
 scale = Vector2(0.655, 0.655)
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1553541083]
+[node name="TextureButton1" type="TextureButton" parent="." unique_id=1553541083]
 offset_left = 901.0
 offset_top = 286.0
 offset_right = 1192.0

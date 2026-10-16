@@ -10,12 +10,14 @@ extends Node2D
 @export var step: float
 var change
 var range: float
+var fakerange: float
  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	while Transtition.transtitioning:
 		await get_tree().process_frame
 	range = randf_range(0, 360)
+	fakerange = randf_range(55/2, 360 -55/2)
 	timer.timeout.connect(move)
 	if !minigameeight:
 		change = 1
@@ -49,6 +51,15 @@ func move():
 			if !sound.finished.get_connections():
 				sound.finished.connect(play)
 		text.text = "Earth"
+	elif (int(radar.rotation_degrees) % 360 > range + fakerange - 55/2 and int(radar.rotation_degrees) % 360 < range + fakerange + 55/2) and (Global.difficulty == "Hell" or Global.difficulty == "Hard"):
+		if minigameeight:
+			if !text.text == "Mars":
+				play()
+		else:
+			play()
+			if !sound.finished.get_connections():
+				sound.finished.connect(play)
+		text.text = "Mars"
 	else:
 		text.text = "NULL"
 		if sound.finished.get_connections():
